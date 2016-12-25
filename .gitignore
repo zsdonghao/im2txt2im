@@ -1,0 +1,4 @@
+*.DS_Store
+checkpoint/
+samples/
+_trash/

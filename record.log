@@ -1,0 +1,1484 @@
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors.CancelledError'>, Enqueue operation was cancelled
+	 [[Node: filename_queue/filename_queue_EnqueueMany = QueueEnqueueMany[Tcomponents=[DT_STRING], _class=["loc:@filename_queue"], timeout_ms=-1, _device="/job:localhost/replica:0/task:0/cpu:0"](filename_queue, filename_queue/RandomShuffle)]]
+
+Caused by op u'filename_queue/filename_queue_EnqueueMany', defined at:
+  File "train_txt2im_coco.py", line 951, in <module>
+    tf.app.run()
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 30, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "train_txt2im_coco.py", line 512, in main
+    images, input_seqs, target_seqs, input_mask = Build_Inputs(mode='train', input_file_pattern=input_file_pattern) # by default, it has random brightness, saturation, contrast, hue, flip, crop; but remember to to use flip and crop only.
+  File "/home/haodong/Workspace/im2txt2im/model_im2txt.py", line 481, in Build_Inputs
+    num_reader_threads=num_input_reader_threads)
+  File "/home/haodong/Workspace/im2txt2im/model_im2txt.py", line 326, in prefetch_input_data
+    data_files, shuffle=True, capacity=16, name=shard_queue_name)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/training/input.py", line 196, in string_input_producer
+    summary_name="fraction_of_%d_full" % capacity)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/training/input.py", line 140, in input_producer
+    enq = q.enqueue_many([input_tensor])
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/ops/data_flow_ops.py", line 371, in enqueue_many
+    self._queue_ref, vals, name=scope)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/ops/gen_data_flow_ops.py", line 1018, in _queue_enqueue_many
+    name=name)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py", line 756, in apply_op
+    op_def=op_def)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 2380, in create_op
+    original_op=self._default_original_op, op_def=op_def)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 1298, in __init__
+    self._traceback = _extract_stack()
+
+CancelledError (see above for traceback): Enqueue operation was cancelled
+	 [[Node: filename_queue/filename_queue_EnqueueMany = QueueEnqueueMany[Tcomponents=[DT_STRING], _class=["loc:@filename_queue"], timeout_ms=-1, _device="/job:localhost/replica:0/task:0/cpu:0"](filename_queue, filename_queue/RandomShuffle)]]
+
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8542 (0.846, 1.036, 0.980), g_loss: 4.3094, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3967 (0.699, 0.566, 0.829), g_loss: 1.1473, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2956 (0.639, 0.460, 0.853), g_loss: 1.2378, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2512 (0.615, 0.404, 0.868), g_loss: 1.2743, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1616 (0.564, 0.321, 0.875), g_loss: 1.3437, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1101 (0.530, 0.262, 0.897), g_loss: 1.3462, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0647 (0.506, 0.241, 0.877), g_loss: 1.4836, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.9793 (0.461, 0.209, 0.828), g_loss: 1.6872, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9482 (0.443, 0.172, 0.837), g_loss: 1.8504, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9149 (0.426, 0.165, 0.812), g_loss: 1.9348, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.8975 (0.416, 0.149, 0.815), g_loss: 1.9830, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8803 (0.406, 0.137, 0.811), g_loss: 2.0154, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8827 (0.410, 0.141, 0.805), g_loss: 1.9877, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8735 (0.401, 0.113, 0.831), g_loss: 1.8927, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8834 (0.403, 0.106, 0.855), g_loss: 1.7794, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8829 (0.403, 0.105, 0.855), g_loss: 1.7421, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8638 (0.393, 0.096, 0.845), g_loss: 1.8014, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8542 (0.389, 0.099, 0.832), g_loss: 1.7848, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8454 (0.384, 0.087, 0.837), g_loss: 1.7862, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8602 (0.391, 0.094, 0.846), g_loss: 1.7679, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8286 (0.376, 0.081, 0.823), g_loss: 1.8006, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.8299 (0.374, 0.074, 0.838), g_loss: 1.8269, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.8245 (0.375, 0.076, 0.822), g_loss: 1.8459, e_loss: 0.0000: 
+INFO:tensorflow:Error reported to Coordinator: <type 'exceptions.RuntimeError'>, Attempted to use a closed Session.
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Error reported to Coordinator: <type 'exceptions.RuntimeError'>, Attempted to use a closed Session.
+INFO:tensorflow:Prefetching values from 256 files matching /home/haodong/Workspace/image_captioning/data/mscoco/train-?????-of-00256
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 12000 d_loss: 1.0086 (0.458, 0.140, 0.962), g_loss: 1.4388, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.8819 (0.398, 0.083, 0.884), g_loss: 1.5427, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.8593 (0.388, 0.077, 0.866), g_loss: 1.5351, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.8390 (0.378, 0.080, 0.842), g_loss: 1.6666, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.8140 (0.367, 0.069, 0.824), g_loss: 1.6892, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.7948 (0.359, 0.066, 0.805), g_loss: 1.7485, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.8137 (0.368, 0.069, 0.822), g_loss: 1.7694, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7953 (0.361, 0.062, 0.807), g_loss: 1.7738, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.7592 (0.344, 0.060, 0.770), g_loss: 1.9270, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.7553 (0.340, 0.057, 0.774), g_loss: 1.9147, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.7490 (0.337, 0.053, 0.772), g_loss: 1.9679, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.7393 (0.335, 0.066, 0.742), g_loss: 2.0460, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.7373 (0.333, 0.060, 0.750), g_loss: 2.0595, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.7091 (0.317, 0.052, 0.731), g_loss: 2.1440, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.7109 (0.323, 0.052, 0.725), g_loss: 2.1072, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.7180 (0.326, 0.064, 0.721), g_loss: 2.1151, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.6830 (0.308, 0.050, 0.699), g_loss: 2.2538, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.6755 (0.306, 0.050, 0.689), g_loss: 2.3572, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.6771 (0.305, 0.047, 0.698), g_loss: 2.2253, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.6165 (0.277, 0.040, 0.639), g_loss: 2.4015, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 22000 d_loss: 0.6423 (0.288, 0.045, 0.664), g_loss: 2.5026, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 22500 d_loss: 0.6592 (0.297, 0.042, 0.682), g_loss: 2.3937, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 23000 d_loss: 0.6270 (0.282, 0.041, 0.649), g_loss: 2.4948, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 23500 d_loss: 0.6482 (0.298, 0.043, 0.658), g_loss: 2.5216, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 24000 d_loss: 0.6337 (0.292, 0.044, 0.641), g_loss: 2.4121, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 24500 d_loss: 0.6269 (0.279, 0.045, 0.651), g_loss: 2.5447, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 25000 d_loss: 0.5891 (0.265, 0.041, 0.607), g_loss: 2.6040, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 25500 d_loss: 0.6166 (0.276, 0.037, 0.645), g_loss: 2.5906, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 26000 d_loss: 0.5855 (0.268, 0.039, 0.595), g_loss: 2.6449, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 26500 d_loss: 0.5888 (0.264, 0.040, 0.611), g_loss: 2.7303, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 27000 d_loss: 0.5969 (0.269, 0.038, 0.618), g_loss: 2.6962, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 27500 d_loss: 0.5881 (0.268, 0.043, 0.598), g_loss: 2.7629, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 28000 d_loss: 0.5678 (0.255, 0.035, 0.590), g_loss: 2.8473, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 28500 d_loss: 0.5814 (0.265, 0.037, 0.597), g_loss: 2.7560, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 29000 d_loss: 0.5816 (0.264, 0.039, 0.596), g_loss: 2.8691, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 29500 d_loss: 0.5495 (0.254, 0.032, 0.560), g_loss: 2.8922, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 30000 d_loss: 0.5881 (0.270, 0.037, 0.598), g_loss: 2.7824, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 30500 d_loss: 0.5288 (0.241, 0.030, 0.546), g_loss: 3.0184, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 31000 d_loss: 0.5732 (0.258, 0.036, 0.595), g_loss: 2.9310, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 31500 d_loss: 0.5673 (0.257, 0.031, 0.590), g_loss: 2.8522, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 32000 d_loss: 0.5774 (0.263, 0.037, 0.591), g_loss: 2.9038, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 32500 d_loss: 0.5499 (0.255, 0.036, 0.554), g_loss: 2.9074, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 33000 d_loss: 0.5395 (0.246, 0.040, 0.548), g_loss: 2.9388, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 33500 d_loss: 0.5188 (0.236, 0.029, 0.536), g_loss: 3.1736, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 34000 d_loss: 0.5211 (0.242, 0.032, 0.527), g_loss: 3.0393, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 34500 d_loss: 0.5757 (0.257, 0.037, 0.599), g_loss: 2.9715, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 35000 d_loss: 0.5077 (0.226, 0.033, 0.530), g_loss: 3.0753, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 35500 d_loss: 0.4829 (0.217, 0.024, 0.506), g_loss: 3.1548, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 36000 d_loss: 0.5385 (0.250, 0.032, 0.544), g_loss: 3.1256, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 36500 d_loss: 0.5253 (0.236, 0.031, 0.547), g_loss: 3.1459, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 37000 d_loss: 0.5218 (0.241, 0.036, 0.526), g_loss: 3.1821, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 37500 d_loss: 0.4893 (0.223, 0.031, 0.503), g_loss: 3.2410, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 38000 d_loss: 0.5065 (0.232, 0.030, 0.518), g_loss: 3.2209, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 38500 d_loss: 0.4865 (0.224, 0.033, 0.493), g_loss: 3.2595, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 39000 d_loss: 0.5047 (0.232, 0.028, 0.516), g_loss: 3.2983, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 39500 d_loss: 0.4968 (0.230, 0.030, 0.503), g_loss: 3.2515, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 40000 d_loss: 0.4674 (0.219, 0.032, 0.464), g_loss: 3.2461, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 40500 d_loss: 0.5099 (0.228, 0.030, 0.534), g_loss: 3.2582, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 41000 d_loss: 0.4733 (0.217, 0.024, 0.489), g_loss: 3.3756, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 41500 d_loss: 0.4768 (0.215, 0.028, 0.495), g_loss: 3.3078, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 42000 d_loss: 0.4895 (0.223, 0.026, 0.507), g_loss: 3.3821, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 42500 d_loss: 0.4735 (0.217, 0.028, 0.485), g_loss: 3.4179, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 43000 d_loss: 0.4878 (0.221, 0.029, 0.505), g_loss: 3.3992, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 43500 d_loss: 0.4808 (0.220, 0.025, 0.497), g_loss: 3.3528, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 44000 d_loss: 0.5075 (0.231, 0.027, 0.526), g_loss: 3.3465, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 44500 d_loss: 0.4803 (0.222, 0.025, 0.491), g_loss: 3.3706, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 45000 d_loss: 0.4240 (0.194, 0.031, 0.429), g_loss: 3.4366, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 45500 d_loss: 0.4688 (0.215, 0.027, 0.480), g_loss: 3.5455, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 46000 d_loss: 0.4833 (0.221, 0.027, 0.497), g_loss: 3.4409, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 46500 d_loss: 0.4955 (0.227, 0.027, 0.510), g_loss: 3.3591, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 47000 d_loss: 0.4556 (0.207, 0.025, 0.471), g_loss: 3.5170, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 47500 d_loss: 0.4980 (0.230, 0.027, 0.510), g_loss: 3.3357, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 48000 d_loss: 0.4610 (0.213, 0.027, 0.470), g_loss: 3.4282, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+DEBUG:root: ** avg step: 48500 d_loss: 0.4413 (0.196, 0.026, 0.465), g_loss: 3.5324, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+DEBUG:root: ** avg step: 49000 d_loss: 0.4405 (0.202, 0.023, 0.455), g_loss: 3.6123, e_loss: 0.0000: 
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 49500 d_loss: 0.4331 (0.201, 0.022, 0.441), g_loss: 3.6807, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** new learning rate: 0.000100
+DEBUG:root: ** avg step: 50000 d_loss: 0.4513 (0.207, 0.026, 0.462), g_loss: 3.6160, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 50500 d_loss: 0.2724 (0.131, 0.015, 0.267), g_loss: 2.9973, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 51000 d_loss: 0.2485 (0.118, 0.016, 0.246), g_loss: 3.3442, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 51500 d_loss: 0.2331 (0.110, 0.015, 0.231), g_loss: 3.5053, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 52000 d_loss: 0.2630 (0.121, 0.020, 0.263), g_loss: 3.5235, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 52500 d_loss: 0.2462 (0.115, 0.015, 0.246), g_loss: 3.6119, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 53000 d_loss: 0.2521 (0.122, 0.017, 0.244), g_loss: 3.6761, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 53500 d_loss: 0.2211 (0.105, 0.016, 0.216), g_loss: 3.7108, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 54000 d_loss: 0.2291 (0.106, 0.014, 0.233), g_loss: 3.8187, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 54500 d_loss: 0.2580 (0.122, 0.014, 0.258), g_loss: 3.8478, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 55000 d_loss: 0.2318 (0.112, 0.018, 0.222), g_loss: 3.7868, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 55500 d_loss: 0.2322 (0.109, 0.020, 0.226), g_loss: 3.8095, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 56000 d_loss: 0.2542 (0.120, 0.016, 0.251), g_loss: 3.8666, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 56500 d_loss: 0.2145 (0.101, 0.017, 0.211), g_loss: 3.9254, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 57000 d_loss: 0.2246 (0.108, 0.017, 0.217), g_loss: 3.9926, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 57500 d_loss: 0.2328 (0.113, 0.014, 0.226), g_loss: 3.9624, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 58000 d_loss: 0.2277 (0.111, 0.017, 0.217), g_loss: 3.9568, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 58500 d_loss: 0.2280 (0.106, 0.016, 0.228), g_loss: 3.9716, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 59000 d_loss: 0.2200 (0.103, 0.013, 0.221), g_loss: 4.1301, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 59500 d_loss: 0.2560 (0.118, 0.013, 0.263), g_loss: 3.9888, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 60000 d_loss: 0.2331 (0.108, 0.014, 0.237), g_loss: 4.0315, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 60500 d_loss: 0.2332 (0.110, 0.015, 0.231), g_loss: 4.0352, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 61000 d_loss: 0.2463 (0.115, 0.019, 0.244), g_loss: 4.0821, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 61500 d_loss: 0.2586 (0.121, 0.019, 0.257), g_loss: 3.9251, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 62000 d_loss: 0.2471 (0.117, 0.013, 0.247), g_loss: 4.0097, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 62500 d_loss: 0.2081 (0.096, 0.012, 0.212), g_loss: 4.1629, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 63000 d_loss: 0.2078 (0.097, 0.015, 0.206), g_loss: 4.1831, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 63500 d_loss: 0.2173 (0.102, 0.009, 0.222), g_loss: 4.2989, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 64000 d_loss: 0.2422 (0.112, 0.017, 0.244), g_loss: 4.2892, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 64500 d_loss: 0.2338 (0.110, 0.015, 0.233), g_loss: 4.1848, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 65000 d_loss: 0.2093 (0.095, 0.014, 0.215), g_loss: 4.3265, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 65500 d_loss: 0.2270 (0.105, 0.017, 0.227), g_loss: 4.2574, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 66000 d_loss: 0.2523 (0.117, 0.013, 0.257), g_loss: 4.2118, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 66500 d_loss: 0.2268 (0.106, 0.013, 0.229), g_loss: 4.2066, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 67000 d_loss: 0.2442 (0.112, 0.011, 0.253), g_loss: 4.2361, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 67500 d_loss: 0.2560 (0.121, 0.018, 0.253), g_loss: 4.2098, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 68000 d_loss: 0.2239 (0.107, 0.013, 0.222), g_loss: 4.1402, e_loss: 0.0000: 
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors.CancelledError'>, Enqueue operation was cancelled
+	 [[Node: random_input_queue_enqueue = QueueEnqueue[Tcomponents=[DT_STRING], _class=["loc:@random_input_queue"], timeout_ms=-1, _device="/job:localhost/replica:0/task:0/cpu:0"](random_input_queue, ReaderRead:1)]]
+
+Caused by op u'random_input_queue_enqueue', defined at:
+  File "train_txt2im_coco.py", line 959, in <module>
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 30, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "train_txt2im_coco.py", line 520, in main
+    t_wrong_image = tf.placeholder('float32', [batch_size, image_size, image_size, 3], name = 'wrong_image')    # 314
+  File "/home/haodong/Workspace/im2txt2im/model_im2txt.py", line 481, in Build_Inputs
+    num_reader_threads=num_input_reader_threads)
+  File "/home/haodong/Workspace/im2txt2im/model_im2txt.py", line 345, in prefetch_input_data
+    enqueue_ops.append(values_queue.enqueue([value]))
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/ops/data_flow_ops.py", line 329, in enqueue
+    return gen_data_flow_ops._queue_enqueue(self._queue_ref, vals, name=scope)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/ops/gen_data_flow_ops.py", line 982, in _queue_enqueue
+    name=name)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py", line 756, in apply_op
+    op_def=op_def)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 2380, in create_op
+    original_op=self._default_original_op, op_def=op_def)
+  File "/home/haodong/Workspace/env2_2/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 1298, in __init__
+    self._traceback = _extract_stack()
+
+CancelledError (see above for traceback): Enqueue operation was cancelled
+	 [[Node: random_input_queue_enqueue = QueueEnqueue[Tcomponents=[DT_STRING], _class=["loc:@random_input_queue"], timeout_ms=-1, _device="/job:localhost/replica:0/task:0/cpu:0"](random_input_queue, ReaderRead:1)]]
+
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8677 (0.856, 1.081, 0.943), g_loss: 4.6145, e_loss: 0.1756: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 1 d_loss: 0.0441 (0.002, 0.029, 0.055), g_loss: 0.0816, e_loss: 0.0033: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7786 (0.822, 1.107, 0.806), g_loss: 3.7454, e_loss: 0.1761: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3723 (0.687, 0.664, 0.706), g_loss: 1.3061, e_loss: 0.0617: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2943 (0.645, 0.528, 0.770), g_loss: 1.3842, e_loss: 0.0500: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 2500 d_loss: 1.2430 (0.615, 0.447, 0.809), g_loss: 1.6650, e_loss: 0.0402: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1003 (0.534, 0.333, 0.799), g_loss: 1.6625, e_loss: 0.0362: 
+DEBUG:root: ** avg step: 3500 d_loss: 0.9847 (0.479, 0.272, 0.740), g_loss: 2.0126, e_loss: 0.0339: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.9372 (0.446, 0.247, 0.736), g_loss: 2.1368, e_loss: 0.0314: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.8842 (0.420, 0.201, 0.728), g_loss: 2.2614, e_loss: 0.0319: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.8292 (0.391, 0.187, 0.689), g_loss: 2.3923, e_loss: 0.0308: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.7857 (0.366, 0.163, 0.676), g_loss: 2.5126, e_loss: 0.0295: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.7754 (0.365, 0.148, 0.673), g_loss: 2.5453, e_loss: 0.0282: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.7357 (0.344, 0.125, 0.659), g_loss: 2.6096, e_loss: 0.0279: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.7580 (0.350, 0.129, 0.688), g_loss: 2.4848, e_loss: 0.0274: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.7420 (0.341, 0.123, 0.678), g_loss: 2.4135, e_loss: 0.0263: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.7524 (0.348, 0.102, 0.707), g_loss: 2.4125, e_loss: 0.0270: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.7755 (0.361, 0.111, 0.718), g_loss: 2.2979, e_loss: 0.0260: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.7694 (0.348, 0.093, 0.749), g_loss: 2.2532, e_loss: 0.0253: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.7878 (0.360, 0.091, 0.765), g_loss: 2.1751, e_loss: 0.0262: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.7922 (0.356, 0.087, 0.784), g_loss: 2.1414, e_loss: 0.0254: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.7894 (0.361, 0.084, 0.774), g_loss: 2.1052, e_loss: 0.0243: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.7729 (0.352, 0.078, 0.763), g_loss: 2.0685, e_loss: 0.0234: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.7877 (0.360, 0.079, 0.777), g_loss: 2.0324, e_loss: 0.0246: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.7685 (0.349, 0.075, 0.765), g_loss: 2.0797, e_loss: 0.0243: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 12500 d_loss: 0.9669 (0.450, 0.137, 0.897), g_loss: 1.6998, e_loss: 0.0244: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.8355 (0.382, 0.088, 0.819), g_loss: 1.7502, e_loss: 0.0242: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.8210 (0.375, 0.083, 0.808), g_loss: 1.7640, e_loss: 0.0239: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.8011 (0.362, 0.075, 0.803), g_loss: 1.7762, e_loss: 0.0229: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.7894 (0.363, 0.072, 0.780), g_loss: 1.8070, e_loss: 0.0233: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.7817 (0.356, 0.070, 0.781), g_loss: 1.8326, e_loss: 0.0232: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7516 (0.338, 0.065, 0.763), g_loss: 1.9507, e_loss: 0.0238: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.7686 (0.349, 0.066, 0.773), g_loss: 1.9270, e_loss: 0.0220: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.7419 (0.341, 0.066, 0.735), g_loss: 1.9736, e_loss: 0.0227: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.7535 (0.340, 0.058, 0.770), g_loss: 1.9466, e_loss: 0.0230: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.7496 (0.339, 0.057, 0.763), g_loss: 1.9187, e_loss: 0.0227: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.7154 (0.326, 0.057, 0.722), g_loss: 2.0554, e_loss: 0.0225: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.6993 (0.316, 0.054, 0.714), g_loss: 2.1517, e_loss: 0.0217: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.6970 (0.314, 0.053, 0.713), g_loss: 2.1419, e_loss: 0.0222: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.6859 (0.313, 0.053, 0.692), g_loss: 2.2109, e_loss: 0.0219: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.6649 (0.301, 0.052, 0.676), g_loss: 2.3063, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.6385 (0.289, 0.044, 0.656), g_loss: 2.3554, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.6733 (0.304, 0.048, 0.691), g_loss: 2.4118, e_loss: 0.0219: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.6842 (0.310, 0.053, 0.696), g_loss: 2.3733, e_loss: 0.0224: 
+DEBUG:root: ** avg step: 22000 d_loss: 0.6528 (0.292, 0.044, 0.678), g_loss: 2.3338, e_loss: 0.0224: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 22500 d_loss: 0.8713 (0.398, 0.100, 0.847), g_loss: 1.9912, e_loss: 0.0207: 
+DEBUG:root: ** avg step: 23000 d_loss: 0.7390 (0.337, 0.064, 0.741), g_loss: 2.0931, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 23500 d_loss: 0.7166 (0.325, 0.053, 0.731), g_loss: 2.0952, e_loss: 0.0220: 
+DEBUG:root: ** avg step: 24000 d_loss: 0.6993 (0.315, 0.048, 0.721), g_loss: 2.0499, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 24500 d_loss: 0.6871 (0.309, 0.049, 0.707), g_loss: 2.1421, e_loss: 0.0210: 
+DEBUG:root: ** avg step: 25000 d_loss: 0.6678 (0.301, 0.046, 0.688), g_loss: 2.2907, e_loss: 0.0203: 
+DEBUG:root: ** avg step: 25500 d_loss: 0.6496 (0.289, 0.043, 0.678), g_loss: 2.2479, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 26000 d_loss: 0.6460 (0.298, 0.041, 0.655), g_loss: 2.3629, e_loss: 0.0207: 
+DEBUG:root: ** avg step: 26500 d_loss: 0.6551 (0.297, 0.046, 0.671), g_loss: 2.3339, e_loss: 0.0211: 
+DEBUG:root: ** avg step: 27000 d_loss: 0.6303 (0.285, 0.039, 0.651), g_loss: 2.3451, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 27500 d_loss: 0.6476 (0.293, 0.042, 0.667), g_loss: 2.4055, e_loss: 0.0202: 
+DEBUG:root: ** avg step: 28000 d_loss: 0.6305 (0.284, 0.037, 0.656), g_loss: 2.4711, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 28500 d_loss: 0.6014 (0.271, 0.041, 0.621), g_loss: 2.3871, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 29000 d_loss: 0.6063 (0.281, 0.034, 0.616), g_loss: 2.4815, e_loss: 0.0203: 
+DEBUG:root: ** avg step: 29500 d_loss: 0.6024 (0.272, 0.036, 0.624), g_loss: 2.5547, e_loss: 0.0206: 
+DEBUG:root: ** avg step: 30000 d_loss: 0.6115 (0.275, 0.041, 0.631), g_loss: 2.6206, e_loss: 0.0204: 
+DEBUG:root: ** avg step: 30500 d_loss: 0.5775 (0.264, 0.035, 0.592), g_loss: 2.6080, e_loss: 0.0205: 
+DEBUG:root: ** avg step: 31000 d_loss: 0.5925 (0.269, 0.037, 0.610), g_loss: 2.6197, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 31500 d_loss: 0.5692 (0.256, 0.033, 0.592), g_loss: 2.6936, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 32000 d_loss: 0.5897 (0.267, 0.031, 0.615), g_loss: 2.5952, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 32500 d_loss: 0.5842 (0.265, 0.033, 0.605), g_loss: 2.7422, e_loss: 0.0198: 
+DEBUG:root: ** avg step: 33000 d_loss: 0.5451 (0.244, 0.031, 0.571), g_loss: 2.7582, e_loss: 0.0188: 
+DEBUG:root: ** avg step: 33500 d_loss: 0.5801 (0.264, 0.033, 0.599), g_loss: 2.8599, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 34000 d_loss: 0.5753 (0.261, 0.033, 0.595), g_loss: 2.7776, e_loss: 0.0198: 
+DEBUG:root: ** avg step: 34500 d_loss: 0.6001 (0.272, 0.031, 0.625), g_loss: 2.6146, e_loss: 0.0197: 
+DEBUG:root: ** avg step: 35000 d_loss: 0.5402 (0.248, 0.031, 0.554), g_loss: 2.8842, e_loss: 0.0199: 
+DEBUG:root: ** avg step: 35500 d_loss: 0.5516 (0.249, 0.031, 0.574), g_loss: 2.8208, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 36000 d_loss: 0.5591 (0.256, 0.029, 0.578), g_loss: 2.8061, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 36500 d_loss: 0.5423 (0.241, 0.023, 0.579), g_loss: 2.8396, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 37000 d_loss: 0.5780 (0.265, 0.032, 0.593), g_loss: 2.7969, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 37500 d_loss: 0.5626 (0.256, 0.030, 0.583), g_loss: 2.8442, e_loss: 0.0196: 
+DEBUG:root: ** avg step: 38000 d_loss: 0.5269 (0.243, 0.024, 0.545), g_loss: 2.9920, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 38500 d_loss: 0.5446 (0.245, 0.029, 0.570), g_loss: 2.9141, e_loss: 0.0198: 
+DEBUG:root: ** avg step: 39000 d_loss: 0.5214 (0.237, 0.025, 0.544), g_loss: 3.0470, e_loss: 0.0203: 
+DEBUG:root: ** avg step: 39500 d_loss: 0.5339 (0.241, 0.027, 0.558), g_loss: 2.9257, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 40000 d_loss: 0.4821 (0.222, 0.027, 0.494), g_loss: 3.1312, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 40500 d_loss: 0.5196 (0.231, 0.023, 0.554), g_loss: 3.1193, e_loss: 0.0185: 
+DEBUG:root: ** avg step: 41000 d_loss: 0.5193 (0.236, 0.024, 0.542), g_loss: 3.0653, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 41500 d_loss: 0.5274 (0.243, 0.031, 0.539), g_loss: 3.1950, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 42000 d_loss: 0.5420 (0.246, 0.025, 0.567), g_loss: 3.0725, e_loss: 0.0188: 
+DEBUG:root: ** avg step: 42500 d_loss: 0.5238 (0.240, 0.024, 0.543), g_loss: 2.9490, e_loss: 0.0196: 
+DEBUG:root: ** avg step: 43000 d_loss: 0.4893 (0.225, 0.029, 0.500), g_loss: 3.1105, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 43500 d_loss: 0.4947 (0.230, 0.024, 0.505), g_loss: 3.2890, e_loss: 0.0188: 
+DEBUG:root: ** avg step: 44000 d_loss: 0.4769 (0.213, 0.023, 0.505), g_loss: 3.3109, e_loss: 0.0182: 
+DEBUG:root: ** avg step: 44500 d_loss: 0.5342 (0.236, 0.026, 0.570), g_loss: 3.2441, e_loss: 0.0186: 
+DEBUG:root: ** avg step: 45000 d_loss: 0.5198 (0.244, 0.024, 0.528), g_loss: 3.0739, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 45500 d_loss: 0.4979 (0.228, 0.022, 0.518), g_loss: 3.2536, e_loss: 0.0182: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.6920 (0.791, 0.839, 0.962), g_loss: 3.6586, e_loss: 0.0185: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+DEBUG:root: ** avg step: 1000 d_loss: 1.2588 (0.618, 0.419, 0.862), g_loss: 1.7419, e_loss: 0.0183: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.1306 (0.549, 0.323, 0.841), g_loss: 1.8373, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1177 (0.538, 0.270, 0.889), g_loss: 1.8179, e_loss: 0.0189: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.0672 (0.506, 0.241, 0.882), g_loss: 1.9617, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.0890 (0.516, 0.204, 0.942), g_loss: 1.6551, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0500 (0.493, 0.174, 0.940), g_loss: 1.4958, e_loss: 0.0180: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0434 (0.489, 0.160, 0.948), g_loss: 1.4848, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 4500 d_loss: 1.0247 (0.479, 0.156, 0.935), g_loss: 1.4999, e_loss: 0.0185: 
+DEBUG:root: ** avg step: 5000 d_loss: 1.0196 (0.471, 0.136, 0.961), g_loss: 1.5089, e_loss: 0.0185: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7508 (0.842, 0.850, 0.968), g_loss: 3.7814, e_loss: 0.0181: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3281 (0.663, 0.462, 0.869), g_loss: 1.2269, e_loss: 0.0184: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2081 (0.591, 0.341, 0.893), g_loss: 1.3215, e_loss: 0.0175: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1771 (0.568, 0.310, 0.907), g_loss: 1.3780, e_loss: 0.0180: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1041 (0.527, 0.245, 0.909), g_loss: 1.4356, e_loss: 0.0184: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.0668 (0.504, 0.221, 0.903), g_loss: 1.5601, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0398 (0.491, 0.210, 0.888), g_loss: 1.6261, e_loss: 0.0174: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8045 (0.841, 1.031, 0.895), g_loss: 4.2021, e_loss: 0.0171: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7785 (0.849, 0.797, 1.062), g_loss: 3.2055, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3061 (0.644, 0.423, 0.900), g_loss: 1.2012, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2191 (0.598, 0.364, 0.878), g_loss: 1.5219, e_loss: 0.0180: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1323 (0.550, 0.297, 0.868), g_loss: 1.6868, e_loss: 0.0163: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.0757 (0.518, 0.258, 0.857), g_loss: 1.8346, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.0351 (0.495, 0.234, 0.845), g_loss: 1.8915, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 3500 d_loss: 0.9760 (0.464, 0.194, 0.830), g_loss: 2.0481, e_loss: 0.0176: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.9218 (0.438, 0.185, 0.783), g_loss: 2.4080, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9151 (0.431, 0.173, 0.796), g_loss: 2.5330, e_loss: 0.0177: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.8592 (0.403, 0.149, 0.764), g_loss: 2.6742, e_loss: 0.0171: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.8612 (0.401, 0.132, 0.789), g_loss: 2.6632, e_loss: 0.0179: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8377 (0.389, 0.125, 0.772), g_loss: 2.9410, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.9153 (0.428, 0.125, 0.850), g_loss: 2.5587, e_loss: 0.0175: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8601 (0.396, 0.118, 0.812), g_loss: 2.6712, e_loss: 0.0181: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8719 (0.404, 0.116, 0.819), g_loss: 2.4847, e_loss: 0.0176: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8536 (0.393, 0.100, 0.821), g_loss: 2.6092, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8469 (0.390, 0.102, 0.812), g_loss: 2.5359, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8365 (0.387, 0.096, 0.803), g_loss: 2.5726, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8273 (0.381, 0.103, 0.791), g_loss: 2.6038, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8495 (0.392, 0.094, 0.822), g_loss: 2.4469, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8305 (0.385, 0.100, 0.792), g_loss: 2.6088, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.7856 (0.365, 0.085, 0.757), g_loss: 2.5348, e_loss: 0.0168: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.8316 (0.381, 0.093, 0.809), g_loss: 2.4779, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.7993 (0.368, 0.073, 0.790), g_loss: 2.4155, e_loss: 0.0165: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.7977 (0.364, 0.077, 0.789), g_loss: 2.4060, e_loss: 0.0169: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.8210 (0.376, 0.076, 0.815), g_loss: 2.4086, e_loss: 0.0171: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.7796 (0.359, 0.077, 0.765), g_loss: 2.4487, e_loss: 0.0180: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.6313 (0.763, 0.945, 0.791), g_loss: 4.4605, e_loss: 0.0176: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.0894 (0.538, 0.421, 0.682), g_loss: 2.2363, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.0331 (0.504, 0.306, 0.752), g_loss: 1.9450, e_loss: 0.0163: 
+DEBUG:root: ** avg step: 2000 d_loss: 0.9422 (0.457, 0.250, 0.720), g_loss: 2.0575, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 2500 d_loss: 0.8817 (0.422, 0.222, 0.696), g_loss: 2.4098, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 3000 d_loss: 0.8306 (0.393, 0.180, 0.696), g_loss: 2.5045, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 3500 d_loss: 0.7476 (0.350, 0.152, 0.643), g_loss: 2.7865, e_loss: 0.0169: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.7263 (0.334, 0.155, 0.629), g_loss: 2.9861, e_loss: 0.0182: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.6662 (0.310, 0.129, 0.583), g_loss: 3.2096, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.6522 (0.305, 0.115, 0.579), g_loss: 3.2771, e_loss: 0.0166: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7270 (0.809, 0.905, 0.931), g_loss: 4.0516, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.2807 (0.633, 0.441, 0.855), g_loss: 1.3380, e_loss: 0.0164: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.1742 (0.574, 0.349, 0.850), g_loss: 1.5161, e_loss: 0.0165: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1008 (0.533, 0.290, 0.845), g_loss: 1.6372, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.0366 (0.494, 0.240, 0.845), g_loss: 1.7861, e_loss: 0.0175: 
+DEBUG:root: ** avg step: 3000 d_loss: 0.9672 (0.459, 0.213, 0.803), g_loss: 1.9172, e_loss: 0.0170: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 22500 d_loss: 1.7595 (0.833, 0.857, 0.997), g_loss: 3.1942, e_loss: 0.0160: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.3660 (0.674, 0.521, 0.863), g_loss: 1.3500, e_loss: 0.0167: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.2018 (0.590, 0.371, 0.854), g_loss: 1.3558, e_loss: 0.0165: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.1219 (0.544, 0.307, 0.848), g_loss: 1.4922, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.0425 (0.506, 0.261, 0.811), g_loss: 1.7081, e_loss: 0.0169: 
+DEBUG:root: ** avg step: 2500 d_loss: 0.9684 (0.459, 0.217, 0.801), g_loss: 1.8541, e_loss: 0.0166: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8181 (0.851, 1.064, 0.869), g_loss: 3.9702, e_loss: 0.1717: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3835 (0.693, 0.656, 0.726), g_loss: 1.2682, e_loss: 0.0634: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.3637 (0.685, 0.600, 0.757), g_loss: 1.5818, e_loss: 0.0495: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.2464 (0.617, 0.471, 0.787), g_loss: 1.3786, e_loss: 0.0437: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8298 (0.870, 0.986, 0.933), g_loss: 3.6745, e_loss: 0.0395: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3789 (0.687, 0.541, 0.843), g_loss: 1.1591, e_loss: 0.0358: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2684 (0.629, 0.458, 0.820), g_loss: 1.4689, e_loss: 0.0342: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1965 (0.591, 0.408, 0.802), g_loss: 1.6623, e_loss: 0.0324: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1699 (0.570, 0.338, 0.862), g_loss: 1.4358, e_loss: 0.0305: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1135 (0.538, 0.289, 0.863), g_loss: 1.5572, e_loss: 0.0303: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0645 (0.513, 0.257, 0.846), g_loss: 1.7066, e_loss: 0.0289: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0043 (0.482, 0.228, 0.816), g_loss: 1.9551, e_loss: 0.0288: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9914 (0.471, 0.215, 0.827), g_loss: 2.0624, e_loss: 0.0270: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9533 (0.446, 0.187, 0.828), g_loss: 1.9853, e_loss: 0.0269: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.9448 (0.445, 0.183, 0.816), g_loss: 2.0654, e_loss: 0.0268: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8825 (0.415, 0.159, 0.776), g_loss: 2.2484, e_loss: 0.0268: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8607 (0.402, 0.147, 0.771), g_loss: 2.5576, e_loss: 0.0261: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8431 (0.396, 0.141, 0.753), g_loss: 2.6262, e_loss: 0.0266: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8299 (0.390, 0.131, 0.749), g_loss: 2.7922, e_loss: 0.0255: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8408 (0.391, 0.127, 0.774), g_loss: 2.7613, e_loss: 0.0250: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8422 (0.388, 0.115, 0.793), g_loss: 2.7108, e_loss: 0.0247: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8690 (0.404, 0.119, 0.811), g_loss: 2.6196, e_loss: 0.0246: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8548 (0.396, 0.108, 0.810), g_loss: 2.5391, e_loss: 0.0244: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8412 (0.386, 0.111, 0.799), g_loss: 2.6053, e_loss: 0.0240: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8699 (0.399, 0.092, 0.849), g_loss: 2.4665, e_loss: 0.0248: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.8183 (0.375, 0.095, 0.793), g_loss: 2.6285, e_loss: 0.0239: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.8279 (0.378, 0.092, 0.808), g_loss: 2.5807, e_loss: 0.0238: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.8260 (0.381, 0.090, 0.800), g_loss: 2.5958, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.8533 (0.394, 0.099, 0.819), g_loss: 2.3622, e_loss: 0.0230: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.8451 (0.389, 0.085, 0.828), g_loss: 2.3712, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.8136 (0.373, 0.084, 0.797), g_loss: 2.4662, e_loss: 0.0233: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.8538 (0.399, 0.093, 0.817), g_loss: 2.3270, e_loss: 0.0227: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.8003 (0.367, 0.082, 0.785), g_loss: 2.5772, e_loss: 0.0230: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.8107 (0.373, 0.080, 0.796), g_loss: 2.4683, e_loss: 0.0235: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7885 (0.365, 0.079, 0.769), g_loss: 2.5598, e_loss: 0.0221: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.7896 (0.363, 0.079, 0.773), g_loss: 2.6656, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.7764 (0.358, 0.076, 0.760), g_loss: 2.5925, e_loss: 0.0228: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.7795 (0.360, 0.073, 0.767), g_loss: 2.5733, e_loss: 0.0227: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.7901 (0.362, 0.064, 0.791), g_loss: 2.5515, e_loss: 0.0223: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.7892 (0.365, 0.070, 0.779), g_loss: 2.4489, e_loss: 0.0217: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.7781 (0.359, 0.069, 0.769), g_loss: 2.5100, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.7847 (0.358, 0.066, 0.787), g_loss: 2.4845, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.8226 (0.379, 0.073, 0.815), g_loss: 2.3176, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.7812 (0.359, 0.065, 0.780), g_loss: 2.3246, e_loss: 0.0221: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0213 (0.021, 0.000, 0.000), g_loss: 0.0003, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7468 (0.826, 0.871, 0.972), g_loss: 4.1794, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.2808 (0.633, 0.443, 0.853), g_loss: 1.3153, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.1808 (0.576, 0.345, 0.865), g_loss: 1.3827, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1073 (0.531, 0.279, 0.873), g_loss: 1.4716, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.0424 (0.500, 0.238, 0.848), g_loss: 1.6499, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 3000 d_loss: 0.9933 (0.468, 0.200, 0.852), g_loss: 1.7663, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 3500 d_loss: 0.9573 (0.453, 0.177, 0.831), g_loss: 1.8636, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.9134 (0.425, 0.167, 0.810), g_loss: 2.0750, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.8775 (0.412, 0.157, 0.775), g_loss: 2.2136, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.8283 (0.384, 0.143, 0.744), g_loss: 2.5513, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.7869 (0.364, 0.114, 0.732), g_loss: 2.6253, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.7898 (0.366, 0.116, 0.731), g_loss: 2.7051, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.7681 (0.356, 0.109, 0.716), g_loss: 2.7463, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7867 (0.835, 0.931, 0.973), g_loss: 4.7958, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3115 (0.652, 0.463, 0.856), g_loss: 1.2814, e_loss: 0.0000: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.1865 (0.582, 0.373, 0.837), g_loss: 1.4544, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7958 (0.848, 1.085, 0.811), g_loss: 3.6822, e_loss: 0.1752: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3700 (0.688, 0.681, 0.684), g_loss: 1.3984, e_loss: 0.0610: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.3240 (0.660, 0.550, 0.778), g_loss: 1.2957, e_loss: 0.0489: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2665 (0.628, 0.448, 0.830), g_loss: 1.2905, e_loss: 0.0420: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.2039 (0.591, 0.390, 0.835), g_loss: 1.3372, e_loss: 0.0388: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1371 (0.552, 0.317, 0.854), g_loss: 1.3577, e_loss: 0.0370: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0816 (0.522, 0.280, 0.840), g_loss: 1.5276, e_loss: 0.0343: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0124 (0.484, 0.235, 0.822), g_loss: 1.6692, e_loss: 0.0327: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9945 (0.472, 0.206, 0.840), g_loss: 1.5879, e_loss: 0.0321: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9436 (0.447, 0.187, 0.807), g_loss: 1.7876, e_loss: 0.0316: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.8940 (0.419, 0.170, 0.780), g_loss: 1.9463, e_loss: 0.0300: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8665 (0.409, 0.151, 0.763), g_loss: 2.0990, e_loss: 0.0285: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8403 (0.388, 0.138, 0.765), g_loss: 2.1445, e_loss: 0.0292: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8099 (0.374, 0.128, 0.744), g_loss: 2.1728, e_loss: 0.0280: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8185 (0.373, 0.113, 0.777), g_loss: 2.1481, e_loss: 0.0268: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8105 (0.374, 0.107, 0.767), g_loss: 2.1195, e_loss: 0.0276: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8201 (0.377, 0.101, 0.785), g_loss: 2.0498, e_loss: 0.0278: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8425 (0.387, 0.100, 0.811), g_loss: 1.9709, e_loss: 0.0261: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8432 (0.389, 0.101, 0.808), g_loss: 1.8229, e_loss: 0.0262: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8839 (0.880, 0.997, 1.011), g_loss: 4.7285, e_loss: 0.1948: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3345 (0.664, 0.500, 0.841), g_loss: 1.2269, e_loss: 0.0728: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2861 (0.635, 0.422, 0.880), g_loss: 1.3572, e_loss: 0.0559: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2162 (0.593, 0.362, 0.884), g_loss: 1.5138, e_loss: 0.0477: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1424 (0.553, 0.287, 0.891), g_loss: 1.5460, e_loss: 0.0439: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.0923 (0.524, 0.246, 0.891), g_loss: 1.6312, e_loss: 0.0395: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0221 (0.486, 0.229, 0.843), g_loss: 1.8723, e_loss: 0.0374: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.9698 (0.464, 0.199, 0.812), g_loss: 2.1643, e_loss: 0.0365: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9084 (0.429, 0.172, 0.788), g_loss: 2.3723, e_loss: 0.0352: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8607 (0.842, 1.110, 0.928), g_loss: 4.8665, e_loss: 0.1954: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3508 (0.676, 0.545, 0.804), g_loss: 1.2969, e_loss: 0.0698: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.2457 (0.617, 0.435, 0.822), g_loss: 1.3561, e_loss: 0.0536: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.1566 (0.566, 0.347, 0.835), g_loss: 1.4951, e_loss: 0.0475: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1273 (0.549, 0.298, 0.858), g_loss: 1.4774, e_loss: 0.0412: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.0571 (0.505, 0.243, 0.860), g_loss: 1.4730, e_loss: 0.0392: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0071 (0.479, 0.216, 0.839), g_loss: 1.6278, e_loss: 0.0368: 
+DEBUG:root: ** avg step: 4000 d_loss: 0.9826 (0.465, 0.187, 0.848), g_loss: 1.7458, e_loss: 0.0362: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9412 (0.441, 0.161, 0.840), g_loss: 1.7292, e_loss: 0.0356: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9446 (0.441, 0.156, 0.852), g_loss: 1.8042, e_loss: 0.0336: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.8991 (0.420, 0.139, 0.820), g_loss: 1.9264, e_loss: 0.0325: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8775 (0.407, 0.131, 0.810), g_loss: 1.8968, e_loss: 0.0333: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8649 (0.399, 0.122, 0.810), g_loss: 1.9641, e_loss: 0.0315: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8616 (0.394, 0.119, 0.817), g_loss: 1.9622, e_loss: 0.0303: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8515 (0.394, 0.108, 0.807), g_loss: 1.9898, e_loss: 0.0293: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8739 (0.403, 0.117, 0.825), g_loss: 1.8936, e_loss: 0.0282: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8739 (0.405, 0.112, 0.826), g_loss: 1.8272, e_loss: 0.0291: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8347 (0.385, 0.099, 0.800), g_loss: 1.8825, e_loss: 0.0295: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8474 (0.389, 0.099, 0.818), g_loss: 1.9295, e_loss: 0.0284: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8257 (0.374, 0.085, 0.819), g_loss: 1.8793, e_loss: 0.0281: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8467 (0.387, 0.090, 0.829), g_loss: 1.9868, e_loss: 0.0279: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.8574 (0.395, 0.082, 0.844), g_loss: 1.7707, e_loss: 0.0278: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8252 (0.844, 1.127, 0.836), g_loss: 3.9106, e_loss: 0.1950: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3701 (0.687, 0.683, 0.683), g_loss: 1.4318, e_loss: 0.0687: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.3208 (0.659, 0.571, 0.752), g_loss: 1.3919, e_loss: 0.0542: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2531 (0.622, 0.460, 0.803), g_loss: 1.4297, e_loss: 0.0455: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1983 (0.587, 0.381, 0.842), g_loss: 1.4115, e_loss: 0.0397: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1318 (0.547, 0.304, 0.865), g_loss: 1.4052, e_loss: 0.0374: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0885 (0.524, 0.272, 0.858), g_loss: 1.4700, e_loss: 0.0366: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0268 (0.489, 0.247, 0.830), g_loss: 1.6001, e_loss: 0.0338: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9583 (0.452, 0.209, 0.804), g_loss: 1.8030, e_loss: 0.0321: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9413 (0.442, 0.187, 0.811), g_loss: 1.8682, e_loss: 0.0317: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.9046 (0.422, 0.174, 0.791), g_loss: 1.9697, e_loss: 0.0304: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8967 (0.420, 0.157, 0.796), g_loss: 1.9579, e_loss: 0.0297: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8974 (0.416, 0.153, 0.810), g_loss: 1.8303, e_loss: 0.0285: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8652 (0.400, 0.133, 0.797), g_loss: 1.9243, e_loss: 0.0291: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8560 (0.393, 0.123, 0.804), g_loss: 1.9115, e_loss: 0.0286: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8503 (0.393, 0.117, 0.798), g_loss: 1.9117, e_loss: 0.0286: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8503 (0.390, 0.120, 0.801), g_loss: 1.8789, e_loss: 0.0278: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8154 (0.374, 0.097, 0.785), g_loss: 1.9477, e_loss: 0.0267: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8295 (0.383, 0.099, 0.795), g_loss: 1.8728, e_loss: 0.0267: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.7979 (0.366, 0.095, 0.770), g_loss: 1.9599, e_loss: 0.0263: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.7860 (0.362, 0.084, 0.764), g_loss: 1.9858, e_loss: 0.0256: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.7778 (0.354, 0.080, 0.768), g_loss: 2.0016, e_loss: 0.0251: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.7590 (0.346, 0.076, 0.750), g_loss: 2.0850, e_loss: 0.0242: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.7485 (0.341, 0.077, 0.737), g_loss: 2.1306, e_loss: 0.0253: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.7151 (0.325, 0.070, 0.710), g_loss: 2.2443, e_loss: 0.0249: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.7189 (0.326, 0.066, 0.720), g_loss: 2.2403, e_loss: 0.0250: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.6980 (0.318, 0.066, 0.695), g_loss: 2.3529, e_loss: 0.0248: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.6939 (0.318, 0.065, 0.687), g_loss: 2.3667, e_loss: 0.0233: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.6786 (0.309, 0.062, 0.677), g_loss: 2.4433, e_loss: 0.0234: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.6820 (0.309, 0.062, 0.685), g_loss: 2.3595, e_loss: 0.0256: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.6590 (0.299, 0.052, 0.668), g_loss: 2.4445, e_loss: 0.0238: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.6554 (0.292, 0.053, 0.673), g_loss: 2.5604, e_loss: 0.0233: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.6669 (0.297, 0.058, 0.681), g_loss: 2.5475, e_loss: 0.0232: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.6350 (0.288, 0.046, 0.649), g_loss: 2.5859, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.6560 (0.296, 0.054, 0.667), g_loss: 2.6202, e_loss: 0.0234: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.6383 (0.288, 0.047, 0.653), g_loss: 2.5442, e_loss: 0.0231: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.6343 (0.283, 0.042, 0.660), g_loss: 2.6105, e_loss: 0.0241: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.6510 (0.293, 0.049, 0.667), g_loss: 2.6974, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.6327 (0.282, 0.044, 0.657), g_loss: 2.6509, e_loss: 0.0219: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8395 (0.873, 1.077, 0.856), g_loss: 3.7829, e_loss: 0.1955: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.4028 (0.700, 0.583, 0.823), g_loss: 1.1503, e_loss: 0.0713: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.3470 (0.670, 0.522, 0.831), g_loss: 1.2422, e_loss: 0.0538: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2789 (0.635, 0.438, 0.851), g_loss: 1.4212, e_loss: 0.0454: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.2562 (0.618, 0.406, 0.870), g_loss: 1.3672, e_loss: 0.0417: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1622 (0.567, 0.339, 0.852), g_loss: 1.5498, e_loss: 0.0383: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.1015 (0.533, 0.284, 0.853), g_loss: 1.5828, e_loss: 0.0364: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0396 (0.499, 0.248, 0.832), g_loss: 1.8757, e_loss: 0.0350: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9948 (0.471, 0.216, 0.831), g_loss: 1.9853, e_loss: 0.0322: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9605 (0.455, 0.191, 0.820), g_loss: 1.9694, e_loss: 0.0308: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.9360 (0.444, 0.189, 0.796), g_loss: 2.0867, e_loss: 0.0310: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8898 (0.412, 0.158, 0.797), g_loss: 2.1966, e_loss: 0.0299: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.9080 (0.424, 0.149, 0.819), g_loss: 2.1259, e_loss: 0.0294: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8634 (0.397, 0.123, 0.809), g_loss: 2.2221, e_loss: 0.0291: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8828 (0.404, 0.122, 0.835), g_loss: 2.1777, e_loss: 0.0297: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8625 (0.397, 0.120, 0.810), g_loss: 2.2311, e_loss: 0.0274: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8712 (0.398, 0.099, 0.848), g_loss: 1.9535, e_loss: 0.0272: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8676 (0.399, 0.100, 0.836), g_loss: 1.9500, e_loss: 0.0263: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8493 (0.384, 0.090, 0.840), g_loss: 2.0106, e_loss: 0.0266: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8514 (0.387, 0.086, 0.842), g_loss: 1.9762, e_loss: 0.0262: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8537 (0.389, 0.086, 0.844), g_loss: 1.9337, e_loss: 0.0259: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.8280 (0.374, 0.076, 0.832), g_loss: 1.9858, e_loss: 0.0257: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.8284 (0.374, 0.076, 0.834), g_loss: 1.9943, e_loss: 0.0248: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.8413 (0.381, 0.071, 0.849), g_loss: 1.8661, e_loss: 0.0251: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.8110 (0.365, 0.068, 0.824), g_loss: 1.9249, e_loss: 0.0248: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.8478 (0.385, 0.066, 0.859), g_loss: 1.7691, e_loss: 0.0244: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.8221 (0.373, 0.070, 0.829), g_loss: 1.8458, e_loss: 0.0240: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.8175 (0.368, 0.057, 0.842), g_loss: 1.8795, e_loss: 0.0244: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.8060 (0.365, 0.061, 0.821), g_loss: 1.9265, e_loss: 0.0227: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.8100 (0.363, 0.053, 0.841), g_loss: 1.8765, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7906 (0.357, 0.051, 0.816), g_loss: 1.8718, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.7930 (0.358, 0.050, 0.820), g_loss: 1.9706, e_loss: 0.0220: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.8131 (0.368, 0.052, 0.838), g_loss: 1.8835, e_loss: 0.0234: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.7773 (0.350, 0.051, 0.804), g_loss: 1.9954, e_loss: 0.0228: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.7889 (0.358, 0.050, 0.812), g_loss: 1.9333, e_loss: 0.0240: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.7933 (0.358, 0.047, 0.824), g_loss: 2.0224, e_loss: 0.0222: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.7604 (0.343, 0.053, 0.781), g_loss: 2.0466, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.7759 (0.349, 0.045, 0.808), g_loss: 1.9758, e_loss: 0.0244: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.7878 (0.358, 0.047, 0.812), g_loss: 1.9084, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.7692 (0.348, 0.048, 0.795), g_loss: 2.0493, e_loss: 0.0230: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.7404 (0.336, 0.041, 0.768), g_loss: 2.1783, e_loss: 0.0222: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.7494 (0.339, 0.044, 0.777), g_loss: 2.1802, e_loss: 0.0225: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.7690 (0.352, 0.046, 0.788), g_loss: 2.0761, e_loss: 0.0224: 
+DEBUG:root: ** avg step: 22000 d_loss: 0.7363 (0.332, 0.041, 0.767), g_loss: 2.1294, e_loss: 0.0226: 
+DEBUG:root: ** avg step: 22500 d_loss: 0.7595 (0.347, 0.039, 0.786), g_loss: 2.1723, e_loss: 0.0220: 
+DEBUG:root: ** avg step: 23000 d_loss: 0.6916 (0.315, 0.032, 0.720), g_loss: 2.1851, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 23500 d_loss: 0.7468 (0.338, 0.040, 0.779), g_loss: 2.2181, e_loss: 0.0221: 
+DEBUG:root: ** avg step: 24000 d_loss: 0.7282 (0.331, 0.041, 0.753), g_loss: 2.2234, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 24500 d_loss: 0.6974 (0.321, 0.037, 0.716), g_loss: 2.3876, e_loss: 0.0211: 
+DEBUG:root: ** avg step: 25000 d_loss: 0.7024 (0.322, 0.041, 0.720), g_loss: 2.3649, e_loss: 0.0208: 
+DEBUG:root: ** avg step: 25500 d_loss: 0.7099 (0.327, 0.039, 0.726), g_loss: 2.3171, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 26000 d_loss: 0.6972 (0.318, 0.033, 0.726), g_loss: 2.3300, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 26500 d_loss: 0.7141 (0.325, 0.036, 0.741), g_loss: 2.2828, e_loss: 0.0207: 
+DEBUG:root: ** avg step: 27000 d_loss: 0.6932 (0.315, 0.035, 0.720), g_loss: 2.3893, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 27500 d_loss: 0.6927 (0.317, 0.037, 0.714), g_loss: 2.3492, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 28000 d_loss: 0.7091 (0.328, 0.034, 0.727), g_loss: 2.2439, e_loss: 0.0210: 
+DEBUG:root: ** avg step: 28500 d_loss: 0.7063 (0.324, 0.034, 0.731), g_loss: 2.3528, e_loss: 0.0210: 
+DEBUG:root: ** avg step: 29000 d_loss: 0.6782 (0.313, 0.030, 0.700), g_loss: 2.3949, e_loss: 0.0210: 
+DEBUG:root: ** avg step: 29500 d_loss: 0.6717 (0.306, 0.037, 0.694), g_loss: 2.4302, e_loss: 0.0211: 
+DEBUG:root: ** avg step: 30000 d_loss: 0.7045 (0.324, 0.036, 0.726), g_loss: 2.3560, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 30500 d_loss: 0.6843 (0.311, 0.037, 0.709), g_loss: 2.3258, e_loss: 0.0207: 
+DEBUG:root: ** avg step: 31000 d_loss: 0.6798 (0.310, 0.037, 0.702), g_loss: 2.4007, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 31500 d_loss: 0.6469 (0.296, 0.029, 0.673), g_loss: 2.5257, e_loss: 0.0204: 
+DEBUG:root: ** avg step: 32000 d_loss: 0.6749 (0.306, 0.032, 0.706), g_loss: 2.5031, e_loss: 0.0210: 
+DEBUG:root: ** avg step: 32500 d_loss: 0.6870 (0.312, 0.034, 0.715), g_loss: 2.4739, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 33000 d_loss: 0.6613 (0.302, 0.030, 0.688), g_loss: 2.5920, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 33500 d_loss: 0.6733 (0.312, 0.036, 0.687), g_loss: 2.5596, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 34000 d_loss: 0.6849 (0.317, 0.035, 0.700), g_loss: 2.4373, e_loss: 0.0202: 
+DEBUG:root: ** avg step: 34500 d_loss: 0.6665 (0.305, 0.029, 0.694), g_loss: 2.4027, e_loss: 0.0203: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-100000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-100000
+DEBUG:root: ** avg step: 20000 d_loss: 0.9456 (0.430, 0.136, 0.895), g_loss: 1.9307, e_loss: 0.0221: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.7606 (0.343, 0.058, 0.777), g_loss: 1.9882, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.7190 (0.324, 0.057, 0.732), g_loss: 2.1242, e_loss: 0.0230: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.6973 (0.314, 0.052, 0.715), g_loss: 2.1326, e_loss: 0.0223: 
+DEBUG:root: ** avg step: 22000 d_loss: 0.6975 (0.315, 0.058, 0.706), g_loss: 2.2494, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 22500 d_loss: 0.6702 (0.306, 0.052, 0.676), g_loss: 2.2343, e_loss: 0.0230: 
+DEBUG:root: ** avg step: 23000 d_loss: 0.6438 (0.292, 0.045, 0.659), g_loss: 2.3627, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 23500 d_loss: 0.6864 (0.311, 0.047, 0.704), g_loss: 2.3048, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 24000 d_loss: 0.6142 (0.279, 0.044, 0.627), g_loss: 2.4595, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 24500 d_loss: 0.6027 (0.271, 0.043, 0.621), g_loss: 2.5296, e_loss: 0.0203: 
+DEBUG:root: ** avg step: 25000 d_loss: 0.6396 (0.292, 0.041, 0.655), g_loss: 2.4841, e_loss: 0.0221: 
+DEBUG:root: ** avg step: 25500 d_loss: 0.5827 (0.264, 0.040, 0.597), g_loss: 2.6169, e_loss: 0.0198: 
+DEBUG:root: ** avg step: 26000 d_loss: 0.5892 (0.267, 0.037, 0.607), g_loss: 2.5700, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 26500 d_loss: 0.5908 (0.266, 0.040, 0.610), g_loss: 2.7209, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 27000 d_loss: 0.5837 (0.265, 0.038, 0.599), g_loss: 2.7852, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 27500 d_loss: 0.5642 (0.254, 0.036, 0.583), g_loss: 2.8091, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 28000 d_loss: 0.5771 (0.258, 0.039, 0.600), g_loss: 2.7528, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 28500 d_loss: 0.5314 (0.235, 0.037, 0.556), g_loss: 2.9812, e_loss: 0.0212: 
+DEBUG:root: ** avg step: 29000 d_loss: 0.5291 (0.239, 0.034, 0.546), g_loss: 2.9914, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 29500 d_loss: 0.5345 (0.243, 0.031, 0.551), g_loss: 3.0320, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 30000 d_loss: 0.5004 (0.227, 0.035, 0.512), g_loss: 3.0502, e_loss: 0.0205: 
+DEBUG:root: ** avg step: 30500 d_loss: 0.5238 (0.235, 0.034, 0.544), g_loss: 3.1092, e_loss: 0.0207: 
+DEBUG:root: ** avg step: 31000 d_loss: 0.4779 (0.215, 0.030, 0.495), g_loss: 3.2297, e_loss: 0.0206: 
+DEBUG:root: ** avg step: 31500 d_loss: 0.5108 (0.231, 0.027, 0.533), g_loss: 3.1496, e_loss: 0.0208: 
+DEBUG:root: ** avg step: 32000 d_loss: 0.5095 (0.226, 0.031, 0.536), g_loss: 3.1854, e_loss: 0.0215: 
+DEBUG:root: ** avg step: 32500 d_loss: 0.5155 (0.234, 0.027, 0.536), g_loss: 3.1248, e_loss: 0.0209: 
+DEBUG:root: ** avg step: 33000 d_loss: 0.5045 (0.226, 0.027, 0.530), g_loss: 3.1461, e_loss: 0.0200: 
+DEBUG:root: ** avg step: 33500 d_loss: 0.5453 (0.241, 0.029, 0.580), g_loss: 3.0446, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 34000 d_loss: 0.5035 (0.222, 0.027, 0.535), g_loss: 3.2063, e_loss: 0.0200: 
+DEBUG:root: ** avg step: 34500 d_loss: 0.5023 (0.231, 0.033, 0.510), g_loss: 3.2030, e_loss: 0.0203: 
+DEBUG:root: ** avg step: 35000 d_loss: 0.4962 (0.223, 0.025, 0.521), g_loss: 3.2650, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 35500 d_loss: 0.4960 (0.226, 0.031, 0.509), g_loss: 3.2067, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 36000 d_loss: 0.5053 (0.227, 0.029, 0.529), g_loss: 3.2320, e_loss: 0.0202: 
+DEBUG:root: ** avg step: 36500 d_loss: 0.4937 (0.220, 0.024, 0.523), g_loss: 3.2115, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 37000 d_loss: 0.4694 (0.212, 0.026, 0.489), g_loss: 3.3876, e_loss: 0.0208: 
+DEBUG:root: ** avg step: 37500 d_loss: 0.5188 (0.235, 0.033, 0.535), g_loss: 3.3260, e_loss: 0.0199: 
+DEBUG:root: ** avg step: 38000 d_loss: 0.4645 (0.208, 0.029, 0.484), g_loss: 3.3390, e_loss: 0.0196: 
+DEBUG:root: ** avg step: 38500 d_loss: 0.5159 (0.236, 0.033, 0.527), g_loss: 3.3243, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 39000 d_loss: 0.4833 (0.216, 0.022, 0.512), g_loss: 3.3102, e_loss: 0.0199: 
+DEBUG:root: ** avg step: 39500 d_loss: 0.5624 (0.255, 0.030, 0.585), g_loss: 3.2887, e_loss: 0.0200: 
+DEBUG:root: ** avg step: 40000 d_loss: 0.4950 (0.229, 0.027, 0.505), g_loss: 3.2457, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 40500 d_loss: 0.4542 (0.205, 0.021, 0.476), g_loss: 3.3600, e_loss: 0.0200: 
+DEBUG:root: ** avg step: 41000 d_loss: 0.5074 (0.232, 0.028, 0.523), g_loss: 3.3945, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 41500 d_loss: 0.5096 (0.231, 0.025, 0.532), g_loss: 3.3183, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 42000 d_loss: 0.5009 (0.230, 0.023, 0.519), g_loss: 3.2516, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 42500 d_loss: 0.4745 (0.213, 0.019, 0.504), g_loss: 3.3632, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 43000 d_loss: 0.4776 (0.214, 0.020, 0.508), g_loss: 3.4843, e_loss: 0.0186: 
+DEBUG:root: ** avg step: 43500 d_loss: 0.4961 (0.225, 0.023, 0.520), g_loss: 3.2648, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 44000 d_loss: 0.5011 (0.229, 0.025, 0.520), g_loss: 3.4276, e_loss: 0.0203: 
+DEBUG:root: ** avg step: 44500 d_loss: 0.4744 (0.216, 0.020, 0.496), g_loss: 3.3732, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 45000 d_loss: 0.4482 (0.209, 0.020, 0.458), g_loss: 3.4184, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 45500 d_loss: 0.4872 (0.222, 0.028, 0.502), g_loss: 3.3436, e_loss: 0.0199: 
+DEBUG:root: ** avg step: 46000 d_loss: 0.4816 (0.221, 0.025, 0.497), g_loss: 3.5076, e_loss: 0.0199: 
+DEBUG:root: ** avg step: 46500 d_loss: 0.4576 (0.207, 0.019, 0.482), g_loss: 3.4838, e_loss: 0.0187: 
+DEBUG:root: ** avg step: 47000 d_loss: 0.4834 (0.221, 0.023, 0.501), g_loss: 3.4850, e_loss: 0.0193: 
+DEBUG:root: ** avg step: 47500 d_loss: 0.4803 (0.218, 0.022, 0.503), g_loss: 3.4053, e_loss: 0.0184: 
+DEBUG:root: ** avg step: 48000 d_loss: 0.4622 (0.214, 0.023, 0.474), g_loss: 3.4879, e_loss: 0.0187: 
+DEBUG:root: ** avg step: 48500 d_loss: 0.4396 (0.200, 0.017, 0.462), g_loss: 3.5737, e_loss: 0.0186: 
+DEBUG:root: ** avg step: 49000 d_loss: 0.4512 (0.205, 0.025, 0.467), g_loss: 3.4942, e_loss: 0.0180: 
+DEBUG:root: ** avg step: 49500 d_loss: 0.4680 (0.214, 0.026, 0.483), g_loss: 3.5288, e_loss: 0.0189: 
+DEBUG:root: ** new learning rate: 0.000100
+DEBUG:root: ** avg step: 50000 d_loss: 0.4514 (0.206, 0.018, 0.472), g_loss: 3.5687, e_loss: 0.0188: 
+DEBUG:root: ** avg step: 50500 d_loss: 0.3073 (0.149, 0.014, 0.302), g_loss: 2.9321, e_loss: 0.0179: 
+DEBUG:root: ** avg step: 51000 d_loss: 0.2780 (0.132, 0.016, 0.276), g_loss: 3.2098, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 51500 d_loss: 0.2856 (0.135, 0.013, 0.289), g_loss: 3.4077, e_loss: 0.0183: 
+DEBUG:root: ** avg step: 52000 d_loss: 0.2408 (0.112, 0.011, 0.247), g_loss: 3.5491, e_loss: 0.0183: 
+DEBUG:root: ** avg step: 52500 d_loss: 0.2552 (0.122, 0.010, 0.257), g_loss: 3.6213, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 53000 d_loss: 0.2730 (0.126, 0.013, 0.282), g_loss: 3.7191, e_loss: 0.0179: 
+DEBUG:root: ** avg step: 53500 d_loss: 0.2547 (0.118, 0.014, 0.259), g_loss: 3.6663, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 54000 d_loss: 0.2623 (0.124, 0.011, 0.267), g_loss: 3.7917, e_loss: 0.0187: 
+DEBUG:root: ** avg step: 54500 d_loss: 0.2350 (0.111, 0.010, 0.238), g_loss: 3.8999, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 55000 d_loss: 0.2638 (0.125, 0.009, 0.270), g_loss: 3.8272, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 55500 d_loss: 0.2637 (0.123, 0.012, 0.269), g_loss: 3.8821, e_loss: 0.0170: 
+DEBUG:root: ** avg step: 56000 d_loss: 0.2080 (0.098, 0.011, 0.208), g_loss: 3.8956, e_loss: 0.0183: 
+DEBUG:root: ** avg step: 56500 d_loss: 0.2417 (0.114, 0.014, 0.242), g_loss: 4.0006, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 57000 d_loss: 0.2775 (0.128, 0.018, 0.281), g_loss: 4.0438, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 57500 d_loss: 0.2717 (0.125, 0.011, 0.282), g_loss: 4.0514, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 58000 d_loss: 0.2322 (0.112, 0.014, 0.227), g_loss: 3.9351, e_loss: 0.0179: 
+DEBUG:root: ** avg step: 58500 d_loss: 0.2402 (0.111, 0.009, 0.250), g_loss: 4.1538, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 59000 d_loss: 0.2844 (0.133, 0.011, 0.293), g_loss: 4.0371, e_loss: 0.0177: 
+DEBUG:root: ** avg step: 59500 d_loss: 0.2592 (0.122, 0.011, 0.263), g_loss: 3.9508, e_loss: 0.0176: 
+DEBUG:root: ** avg step: 60000 d_loss: 0.2568 (0.124, 0.011, 0.253), g_loss: 3.9961, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 60500 d_loss: 0.2348 (0.108, 0.012, 0.241), g_loss: 4.1416, e_loss: 0.0180: 
+DEBUG:root: ** avg step: 61000 d_loss: 0.2647 (0.126, 0.012, 0.265), g_loss: 3.8659, e_loss: 0.0181: 
+DEBUG:root: ** avg step: 61500 d_loss: 0.2690 (0.128, 0.009, 0.274), g_loss: 4.0575, e_loss: 0.0175: 
+DEBUG:root: ** avg step: 62000 d_loss: 0.2755 (0.129, 0.012, 0.280), g_loss: 4.0301, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 62500 d_loss: 0.2777 (0.126, 0.010, 0.294), g_loss: 3.9769, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 63000 d_loss: 0.2519 (0.115, 0.008, 0.265), g_loss: 4.1137, e_loss: 0.0169: 
+DEBUG:root: ** avg step: 63500 d_loss: 0.2420 (0.112, 0.011, 0.250), g_loss: 4.1356, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 64000 d_loss: 0.2451 (0.113, 0.011, 0.253), g_loss: 4.1547, e_loss: 0.0162: 
+DEBUG:root: ** avg step: 64500 d_loss: 0.2693 (0.124, 0.009, 0.282), g_loss: 4.1889, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 65000 d_loss: 0.2622 (0.119, 0.013, 0.273), g_loss: 4.0685, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 65500 d_loss: 0.2415 (0.113, 0.010, 0.248), g_loss: 4.2640, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 66000 d_loss: 0.2609 (0.120, 0.017, 0.265), g_loss: 4.1526, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 66500 d_loss: 0.2707 (0.127, 0.009, 0.279), g_loss: 4.0567, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 67000 d_loss: 0.2610 (0.125, 0.008, 0.264), g_loss: 4.1775, e_loss: 0.0167: 
+DEBUG:root: ** avg step: 67500 d_loss: 0.2447 (0.112, 0.010, 0.255), g_loss: 4.3299, e_loss: 0.0167: 
+DEBUG:root: ** avg step: 68000 d_loss: 0.2596 (0.122, 0.011, 0.264), g_loss: 4.1789, e_loss: 0.0165: 
+DEBUG:root: ** avg step: 68500 d_loss: 0.2662 (0.123, 0.014, 0.273), g_loss: 4.1655, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 69000 d_loss: 0.2615 (0.120, 0.012, 0.270), g_loss: 4.2899, e_loss: 0.0154: 
+DEBUG:root: ** avg step: 69500 d_loss: 0.2607 (0.120, 0.013, 0.268), g_loss: 4.2420, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 70000 d_loss: 0.2578 (0.120, 0.010, 0.265), g_loss: 4.1582, e_loss: 0.0168: 
+DEBUG:root: ** avg step: 70500 d_loss: 0.2539 (0.117, 0.010, 0.264), g_loss: 4.1707, e_loss: 0.0165: 
+DEBUG:root: ** avg step: 71000 d_loss: 0.2750 (0.127, 0.012, 0.284), g_loss: 4.1729, e_loss: 0.0172: 
+DEBUG:root: ** avg step: 71500 d_loss: 0.2669 (0.121, 0.009, 0.282), g_loss: 4.2558, e_loss: 0.0163: 
+DEBUG:root: ** avg step: 72000 d_loss: 0.2631 (0.126, 0.011, 0.264), g_loss: 4.2560, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 72500 d_loss: 0.2714 (0.123, 0.013, 0.284), g_loss: 4.2090, e_loss: 0.0166: 
+DEBUG:root: ** avg step: 73000 d_loss: 0.2515 (0.116, 0.014, 0.258), g_loss: 4.3008, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 73500 d_loss: 0.2481 (0.115, 0.010, 0.257), g_loss: 4.3494, e_loss: 0.0168: 
+DEBUG:root: ** avg step: 74000 d_loss: 0.2865 (0.134, 0.015, 0.291), g_loss: 4.1897, e_loss: 0.0165: 
+DEBUG:root: ** avg step: 74500 d_loss: 0.2624 (0.124, 0.010, 0.265), g_loss: 4.2344, e_loss: 0.0160: 
+DEBUG:root: ** avg step: 75000 d_loss: 0.2562 (0.119, 0.009, 0.266), g_loss: 4.2190, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 75500 d_loss: 0.2708 (0.127, 0.012, 0.277), g_loss: 4.4371, e_loss: 0.0167: 
+DEBUG:root: ** avg step: 76000 d_loss: 0.2662 (0.122, 0.007, 0.282), g_loss: 4.3123, e_loss: 0.0168: 
+DEBUG:root: ** avg step: 76500 d_loss: 0.2297 (0.108, 0.012, 0.232), g_loss: 4.2824, e_loss: 0.0168: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.7670 (0.833, 1.197, 0.671), g_loss: 3.8637, e_loss: 0.2047: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3836 (0.691, 0.805, 0.580), g_loss: 1.4912, e_loss: 0.0721: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.3526 (0.676, 0.650, 0.704), g_loss: 1.4048, e_loss: 0.0568: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.3074 (0.650, 0.545, 0.770), g_loss: 1.3891, e_loss: 0.0463: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.2424 (0.613, 0.460, 0.800), g_loss: 1.5273, e_loss: 0.0417: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1880 (0.582, 0.389, 0.822), g_loss: 1.6341, e_loss: 0.0385: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.1451 (0.559, 0.357, 0.815), g_loss: 1.7503, e_loss: 0.0357: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.1000 (0.535, 0.324, 0.807), g_loss: 1.7841, e_loss: 0.0338: 
+DEBUG:root: ** avg step: 4500 d_loss: 1.0467 (0.507, 0.313, 0.766), g_loss: 2.1717, e_loss: 0.0324: 
+DEBUG:root: ** avg step: 5000 d_loss: 1.0065 (0.486, 0.278, 0.763), g_loss: 2.1270, e_loss: 0.0313: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.9297 (0.442, 0.237, 0.738), g_loss: 2.3768, e_loss: 0.0298: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.9334 (0.448, 0.229, 0.742), g_loss: 2.2881, e_loss: 0.0295: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8728 (0.413, 0.203, 0.716), g_loss: 2.4277, e_loss: 0.0295: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8447 (0.397, 0.186, 0.709), g_loss: 2.4702, e_loss: 0.0274: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8257 (0.390, 0.169, 0.701), g_loss: 2.4574, e_loss: 0.0267: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8269 (0.388, 0.157, 0.721), g_loss: 2.4546, e_loss: 0.0275: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.7938 (0.371, 0.153, 0.692), g_loss: 2.5565, e_loss: 0.0272: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.7915 (0.366, 0.126, 0.726), g_loss: 2.4614, e_loss: 0.0259: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8217 (0.383, 0.142, 0.736), g_loss: 2.3880, e_loss: 0.0264: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8214 (0.376, 0.129, 0.762), g_loss: 2.2638, e_loss: 0.0246: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8365 (0.390, 0.113, 0.780), g_loss: 2.0521, e_loss: 0.0248: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.8235 (0.380, 0.112, 0.775), g_loss: 1.9824, e_loss: 0.0247: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.8229 (0.379, 0.107, 0.780), g_loss: 2.0328, e_loss: 0.0248: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.8372 (0.387, 0.100, 0.800), g_loss: 1.9189, e_loss: 0.0237: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.8014 (0.366, 0.095, 0.774), g_loss: 1.9510, e_loss: 0.0235: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.8088 (0.372, 0.101, 0.772), g_loss: 2.0054, e_loss: 0.0241: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.7651 (0.348, 0.087, 0.746), g_loss: 2.1147, e_loss: 0.0227: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.7908 (0.364, 0.090, 0.763), g_loss: 1.9997, e_loss: 0.0231: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.7799 (0.358, 0.081, 0.763), g_loss: 1.9901, e_loss: 0.0236: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.7371 (0.334, 0.073, 0.733), g_loss: 2.1057, e_loss: 0.0223: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7612 (0.341, 0.081, 0.759), g_loss: 2.1122, e_loss: 0.0220: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.7467 (0.339, 0.069, 0.746), g_loss: 2.1312, e_loss: 0.0224: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.7463 (0.341, 0.073, 0.738), g_loss: 2.1423, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.7251 (0.328, 0.068, 0.726), g_loss: 2.1801, e_loss: 0.0220: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.7213 (0.329, 0.071, 0.714), g_loss: 2.1874, e_loss: 0.0214: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.7059 (0.322, 0.072, 0.696), g_loss: 2.2817, e_loss: 0.0226: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.6957 (0.317, 0.067, 0.690), g_loss: 2.2761, e_loss: 0.0207: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.6862 (0.312, 0.064, 0.683), g_loss: 2.3469, e_loss: 0.0219: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.6754 (0.303, 0.065, 0.680), g_loss: 2.3779, e_loss: 0.0217: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.6867 (0.312, 0.069, 0.680), g_loss: 2.4570, e_loss: 0.0211: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.6621 (0.304, 0.060, 0.655), g_loss: 2.4623, e_loss: 0.0223: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.6644 (0.300, 0.066, 0.663), g_loss: 2.4158, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.6162 (0.278, 0.055, 0.622), g_loss: 2.6050, e_loss: 0.0205: 
+DEBUG:root: ** avg step: 22000 d_loss: 0.6387 (0.287, 0.053, 0.651), g_loss: 2.6519, e_loss: 0.0213: 
+DEBUG:root: ** avg step: 22500 d_loss: 0.6080 (0.274, 0.051, 0.617), g_loss: 2.6984, e_loss: 0.0216: 
+DEBUG:root: ** avg step: 23000 d_loss: 0.6473 (0.294, 0.054, 0.653), g_loss: 2.5324, e_loss: 0.0217: 
+DEBUG:root: ** avg step: 23500 d_loss: 0.6198 (0.278, 0.053, 0.631), g_loss: 2.6186, e_loss: 0.0218: 
+DEBUG:root: ** avg step: 24000 d_loss: 0.6194 (0.276, 0.047, 0.639), g_loss: 2.7195, e_loss: 0.0205: 
+DEBUG:root: ** avg step: 24500 d_loss: 0.5998 (0.276, 0.052, 0.596), g_loss: 2.7529, e_loss: 0.0202: 
+DEBUG:root: ** avg step: 25000 d_loss: 0.5987 (0.268, 0.050, 0.612), g_loss: 2.8012, e_loss: 0.0210: 
+DEBUG:root: ** avg step: 25500 d_loss: 0.5992 (0.269, 0.056, 0.604), g_loss: 2.8751, e_loss: 0.0206: 
+DEBUG:root: ** avg step: 26000 d_loss: 0.5739 (0.254, 0.042, 0.597), g_loss: 2.9485, e_loss: 0.0205: 
+DEBUG:root: ** avg step: 26500 d_loss: 0.5858 (0.266, 0.047, 0.592), g_loss: 2.8469, e_loss: 0.0200: 
+DEBUG:root: ** avg step: 27000 d_loss: 0.5698 (0.254, 0.046, 0.586), g_loss: 2.9022, e_loss: 0.0196: 
+DEBUG:root: ** avg step: 27500 d_loss: 0.5220 (0.229, 0.046, 0.539), g_loss: 2.9772, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 28000 d_loss: 0.5749 (0.257, 0.045, 0.591), g_loss: 2.9717, e_loss: 0.0196: 
+DEBUG:root: ** avg step: 28500 d_loss: 0.5776 (0.263, 0.043, 0.586), g_loss: 2.9181, e_loss: 0.0187: 
+DEBUG:root: ** avg step: 29000 d_loss: 0.5309 (0.241, 0.046, 0.533), g_loss: 2.9491, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 29500 d_loss: 0.4982 (0.223, 0.039, 0.512), g_loss: 3.2032, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 30000 d_loss: 0.5096 (0.230, 0.037, 0.523), g_loss: 3.2300, e_loss: 0.0198: 
+DEBUG:root: ** avg step: 30500 d_loss: 0.4999 (0.219, 0.034, 0.527), g_loss: 3.2580, e_loss: 0.0201: 
+DEBUG:root: ** avg step: 31000 d_loss: 0.5671 (0.252, 0.041, 0.589), g_loss: 3.0400, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 31500 d_loss: 0.4799 (0.214, 0.034, 0.497), g_loss: 3.2811, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 32000 d_loss: 0.5259 (0.237, 0.036, 0.541), g_loss: 3.2221, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 32500 d_loss: 0.5348 (0.239, 0.042, 0.551), g_loss: 3.1931, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 33000 d_loss: 0.5247 (0.234, 0.037, 0.545), g_loss: 3.1705, e_loss: 0.0186: 
+DEBUG:root: ** avg step: 33500 d_loss: 0.5479 (0.245, 0.034, 0.572), g_loss: 3.0896, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 34000 d_loss: 0.4978 (0.222, 0.030, 0.521), g_loss: 3.1724, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 34500 d_loss: 0.5139 (0.230, 0.034, 0.534), g_loss: 3.1291, e_loss: 0.0199: 
+DEBUG:root: ** avg step: 35000 d_loss: 0.5088 (0.224, 0.032, 0.537), g_loss: 3.1906, e_loss: 0.0185: 
+DEBUG:root: ** avg step: 35500 d_loss: 0.5307 (0.240, 0.035, 0.547), g_loss: 3.0918, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 36000 d_loss: 0.4952 (0.219, 0.032, 0.519), g_loss: 3.2381, e_loss: 0.0194: 
+DEBUG:root: ** avg step: 36500 d_loss: 0.4897 (0.214, 0.028, 0.523), g_loss: 3.2648, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 37000 d_loss: 0.5045 (0.224, 0.033, 0.529), g_loss: 3.3412, e_loss: 0.0195: 
+DEBUG:root: ** avg step: 37500 d_loss: 0.5456 (0.248, 0.033, 0.562), g_loss: 3.1754, e_loss: 0.0185: 
+DEBUG:root: ** avg step: 38000 d_loss: 0.5097 (0.232, 0.031, 0.524), g_loss: 3.1631, e_loss: 0.0182: 
+DEBUG:root: ** avg step: 38500 d_loss: 0.5163 (0.232, 0.027, 0.541), g_loss: 3.1916, e_loss: 0.0192: 
+DEBUG:root: ** avg step: 39000 d_loss: 0.4866 (0.218, 0.030, 0.507), g_loss: 3.2768, e_loss: 0.0183: 
+DEBUG:root: ** avg step: 39500 d_loss: 0.4845 (0.215, 0.031, 0.508), g_loss: 3.2234, e_loss: 0.0191: 
+DEBUG:root: ** avg step: 40000 d_loss: 0.4108 (0.186, 0.025, 0.425), g_loss: 3.4644, e_loss: 0.0185: 
+DEBUG:root: ** avg step: 40500 d_loss: 0.4680 (0.209, 0.025, 0.494), g_loss: 3.4142, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 41000 d_loss: 0.4585 (0.207, 0.024, 0.480), g_loss: 3.4874, e_loss: 0.0186: 
+DEBUG:root: ** avg step: 41500 d_loss: 0.4909 (0.223, 0.031, 0.504), g_loss: 3.3736, e_loss: 0.0190: 
+DEBUG:root: ** avg step: 42000 d_loss: 0.5055 (0.230, 0.028, 0.524), g_loss: 3.2623, e_loss: 0.0188: 
+DEBUG:root: ** avg step: 42500 d_loss: 0.4747 (0.215, 0.024, 0.495), g_loss: 3.3554, e_loss: 0.0174: 
+DEBUG:root: ** avg step: 43000 d_loss: 0.4660 (0.211, 0.029, 0.481), g_loss: 3.4303, e_loss: 0.0173: 
+DEBUG:root: ** avg step: 43500 d_loss: 0.4699 (0.209, 0.024, 0.497), g_loss: 3.4461, e_loss: 0.0180: 
+DEBUG:root: ** avg step: 44000 d_loss: 0.4499 (0.203, 0.026, 0.468), g_loss: 3.5042, e_loss: 0.0178: 
+DEBUG:root: ** avg step: 44500 d_loss: 0.4820 (0.217, 0.026, 0.505), g_loss: 3.4464, e_loss: 0.0175: 
+DEBUG:root: ** avg step: 45000 d_loss: 0.4432 (0.206, 0.027, 0.447), g_loss: 3.2841, e_loss: 0.0184: 
+DEBUG:root: ** avg step: 45500 d_loss: 0.4266 (0.192, 0.024, 0.446), g_loss: 3.6503, e_loss: 0.0184: 
+DEBUG:root: ** avg step: 46000 d_loss: 0.4776 (0.216, 0.026, 0.497), g_loss: 3.4953, e_loss: 0.0179: 
+DEBUG:root: ** avg step: 46500 d_loss: 0.4136 (0.183, 0.020, 0.442), g_loss: 3.6050, e_loss: 0.0177: 
+DEBUG:root: ** avg step: 47000 d_loss: 0.4531 (0.201, 0.021, 0.484), g_loss: 3.6512, e_loss: 0.0182: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8276 (0.875, 1.030, 0.876), g_loss: 3.5833, e_loss: 0.2291: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3975 (0.698, 0.632, 0.766), g_loss: 1.1128, e_loss: 0.0832: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.3324 (0.667, 0.581, 0.751), g_loss: 1.2720, e_loss: 0.0639: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2588 (0.626, 0.481, 0.784), g_loss: 1.4215, e_loss: 0.0550: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.2107 (0.595, 0.399, 0.832), g_loss: 1.3826, e_loss: 0.0481: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.1688 (0.566, 0.343, 0.863), g_loss: 1.2633, e_loss: 0.0442: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.1201 (0.542, 0.301, 0.856), g_loss: 1.3427, e_loss: 0.0405: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0559 (0.506, 0.256, 0.844), g_loss: 1.4602, e_loss: 0.0397: 
+DEBUG:root: ** avg step: 4500 d_loss: 1.0225 (0.486, 0.219, 0.853), g_loss: 1.5108, e_loss: 0.0388: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9805 (0.465, 0.220, 0.812), g_loss: 1.6896, e_loss: 0.0363: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.9235 (0.434, 0.202, 0.776), g_loss: 1.9023, e_loss: 0.0348: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.9021 (0.424, 0.180, 0.775), g_loss: 1.9187, e_loss: 0.0351: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8701 (0.406, 0.163, 0.765), g_loss: 2.0783, e_loss: 0.0330: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8347 (0.388, 0.143, 0.749), g_loss: 2.0620, e_loss: 0.0334: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8332 (0.386, 0.138, 0.756), g_loss: 2.1118, e_loss: 0.0330: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.7980 (0.369, 0.128, 0.729), g_loss: 2.2388, e_loss: 0.0309: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8184 (0.376, 0.124, 0.760), g_loss: 2.0792, e_loss: 0.0321: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8014 (0.366, 0.116, 0.755), g_loss: 2.0608, e_loss: 0.0312: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.7735 (0.351, 0.098, 0.747), g_loss: 2.0908, e_loss: 0.0309: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.7766 (0.356, 0.102, 0.740), g_loss: 2.1289, e_loss: 0.0297: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.7758 (0.354, 0.094, 0.750), g_loss: 2.0683, e_loss: 0.0302: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.7679 (0.351, 0.090, 0.745), g_loss: 2.1978, e_loss: 0.0305: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.7460 (0.343, 0.086, 0.719), g_loss: 2.1387, e_loss: 0.0303: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.7347 (0.337, 0.077, 0.718), g_loss: 2.2467, e_loss: 0.0288: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.7328 (0.335, 0.081, 0.715), g_loss: 2.2161, e_loss: 0.0281: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.7401 (0.336, 0.073, 0.735), g_loss: 2.2109, e_loss: 0.0288: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.7054 (0.320, 0.077, 0.694), g_loss: 2.3160, e_loss: 0.0281: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.7004 (0.313, 0.071, 0.703), g_loss: 2.3874, e_loss: 0.0287: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.7184 (0.329, 0.070, 0.708), g_loss: 2.1974, e_loss: 0.0282: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.6898 (0.314, 0.060, 0.692), g_loss: 2.3464, e_loss: 0.0273: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7002 (0.315, 0.066, 0.704), g_loss: 2.3560, e_loss: 0.0273: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.7104 (0.322, 0.067, 0.710), g_loss: 2.3476, e_loss: 0.0260: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.6857 (0.312, 0.060, 0.687), g_loss: 2.2582, e_loss: 0.0271: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.6827 (0.312, 0.067, 0.674), g_loss: 2.3661, e_loss: 0.0279: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.6708 (0.302, 0.057, 0.681), g_loss: 2.3742, e_loss: 0.0270: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.6612 (0.297, 0.058, 0.670), g_loss: 2.5139, e_loss: 0.0265: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.6792 (0.308, 0.048, 0.695), g_loss: 2.3583, e_loss: 0.0257: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.6480 (0.294, 0.049, 0.659), g_loss: 2.4960, e_loss: 0.0266: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.6601 (0.301, 0.054, 0.664), g_loss: 2.5073, e_loss: 0.0255: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.6668 (0.307, 0.051, 0.668), g_loss: 2.3714, e_loss: 0.0251: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.6537 (0.297, 0.053, 0.660), g_loss: 2.4427, e_loss: 0.0256: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.6242 (0.277, 0.044, 0.650), g_loss: 2.5837, e_loss: 0.0257: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.5897 (0.264, 0.044, 0.607), g_loss: 2.7208, e_loss: 0.0255: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0316 (0.032, 0.000, 0.000), g_loss: 0.0005, e_loss: 0.0000: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0274 (0.027, 0.000, 0.000), g_loss: 0.0000, e_loss: 0.00002: 
+DEBUG:root: ** avg step: 500 d_loss: 1.1060 (0.483, 0.104, 1.141), g_loss: 2.5143, e_loss: 0.02169: 
+DEBUG:root: ** avg step: 1000 d_loss: 0.7769 (0.352, 0.045, 0.805), g_loss: 2.4528, e_loss: 0.02097: 
+DEBUG:root: ** avg step: 1500 d_loss: 0.7155 (0.319, 0.045, 0.748), g_loss: 2.5859, e_loss: 0.01997: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0320 (0.032, 0.000, 0.000), g_loss: 0.0000, e_loss: 0.00006: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0123 (0.012, 0.000, 0.000), g_loss: 0.0000, e_loss: 0.00002: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0046 (0.004, 0.001, 0.000), g_loss: 0.0000, e_loss: 0.00005: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 0 d_loss: 0.0046 (0.001, 0.003, 0.003), g_loss: 0.0879, e_loss: 0.00165: 
+INFO:tensorflow:Initializing vocabulary from file: /home/haodong/Workspace/image_captioning/data/mscoco/word_counts.txt
+INFO:tensorflow:Loading model from im2txt checkpoint: /home/haodong/Workspace/image_captioning/model/train/model.ckpt-1000000
+INFO:tensorflow:Successfully loaded im2txt checkpoint: model.ckpt-1000000
+DEBUG:root: ** init lr: 0.000200, n_step_epoch: 1250, decay_every_epoch: 40, lr_decay: 0.500000
+DEBUG:root: ** avg step: 500 d_loss: 1.8286 (0.853, 1.114, 0.837), g_loss: 4.3446, e_loss: 0.20300: 
+DEBUG:root: ** avg step: 1000 d_loss: 1.3619 (0.679, 0.562, 0.804), g_loss: 1.2894, e_loss: 0.07153: 
+DEBUG:root: ** avg step: 1500 d_loss: 1.3009 (0.650, 0.528, 0.774), g_loss: 1.3328, e_loss: 0.05567: 
+DEBUG:root: ** avg step: 2000 d_loss: 1.2241 (0.605, 0.439, 0.800), g_loss: 1.4629, e_loss: 0.04741: 
+DEBUG:root: ** avg step: 2500 d_loss: 1.1567 (0.566, 0.362, 0.820), g_loss: 1.5227, e_loss: 0.04188: 
+DEBUG:root: ** avg step: 3000 d_loss: 1.0887 (0.531, 0.305, 0.811), g_loss: 1.6244, e_loss: 0.03836: 
+DEBUG:root: ** avg step: 3500 d_loss: 1.0391 (0.498, 0.261, 0.821), g_loss: 1.7569, e_loss: 0.03687: 
+DEBUG:root: ** avg step: 4000 d_loss: 1.0010 (0.470, 0.244, 0.817), g_loss: 1.8578, e_loss: 0.03416: 
+DEBUG:root: ** avg step: 4500 d_loss: 0.9547 (0.453, 0.222, 0.782), g_loss: 2.1032, e_loss: 0.03293: 
+DEBUG:root: ** avg step: 5000 d_loss: 0.9328 (0.441, 0.200, 0.784), g_loss: 2.0647, e_loss: 0.03319: 
+DEBUG:root: ** avg step: 5500 d_loss: 0.8743 (0.412, 0.174, 0.749), g_loss: 2.2045, e_loss: 0.03003: 
+DEBUG:root: ** avg step: 6000 d_loss: 0.8607 (0.403, 0.168, 0.748), g_loss: 2.3104, e_loss: 0.03035: 
+DEBUG:root: ** avg step: 6500 d_loss: 0.8460 (0.390, 0.148, 0.764), g_loss: 2.3013, e_loss: 0.02898: 
+DEBUG:root: ** avg step: 7000 d_loss: 0.8469 (0.394, 0.143, 0.764), g_loss: 2.1145, e_loss: 0.02834: 
+DEBUG:root: ** avg step: 7500 d_loss: 0.8275 (0.388, 0.124, 0.756), g_loss: 2.1895, e_loss: 0.02805: 
+DEBUG:root: ** avg step: 8000 d_loss: 0.8383 (0.390, 0.120, 0.777), g_loss: 2.0190, e_loss: 0.02689: 
+DEBUG:root: ** avg step: 8500 d_loss: 0.8304 (0.381, 0.112, 0.787), g_loss: 1.9898, e_loss: 0.02683: 
+DEBUG:root: ** avg step: 9000 d_loss: 0.8488 (0.392, 0.110, 0.803), g_loss: 1.9334, e_loss: 0.02563: 
+DEBUG:root: ** avg step: 9500 d_loss: 0.8158 (0.372, 0.096, 0.790), g_loss: 1.9352, e_loss: 0.02654: 
+DEBUG:root: ** avg step: 10000 d_loss: 0.8053 (0.363, 0.090, 0.794), g_loss: 1.9965, e_loss: 0.02549: 
+DEBUG:root: ** avg step: 10500 d_loss: 0.8189 (0.373, 0.095, 0.796), g_loss: 1.9468, e_loss: 0.02556: 
+DEBUG:root: ** avg step: 11000 d_loss: 0.7873 (0.362, 0.080, 0.770), g_loss: 1.9888, e_loss: 0.02468: 
+DEBUG:root: ** avg step: 11500 d_loss: 0.7974 (0.360, 0.079, 0.795), g_loss: 1.9313, e_loss: 0.02445: 
+DEBUG:root: ** avg step: 12000 d_loss: 0.7954 (0.360, 0.085, 0.786), g_loss: 2.0468, e_loss: 0.02410: 
+DEBUG:root: ** avg step: 12500 d_loss: 0.7993 (0.363, 0.078, 0.794), g_loss: 2.0334, e_loss: 0.02339: 
+DEBUG:root: ** avg step: 13000 d_loss: 0.7408 (0.333, 0.062, 0.753), g_loss: 2.1079, e_loss: 0.02278: 
+DEBUG:root: ** avg step: 13500 d_loss: 0.7637 (0.345, 0.070, 0.767), g_loss: 2.0948, e_loss: 0.02332: 
+DEBUG:root: ** avg step: 14000 d_loss: 0.7349 (0.333, 0.060, 0.743), g_loss: 2.1597, e_loss: 0.02400: 
+DEBUG:root: ** avg step: 14500 d_loss: 0.7398 (0.335, 0.064, 0.746), g_loss: 2.1192, e_loss: 0.02228: 
+DEBUG:root: ** avg step: 15000 d_loss: 0.7074 (0.321, 0.056, 0.716), g_loss: 2.2756, e_loss: 0.02202: 
+DEBUG:root: ** avg step: 15500 d_loss: 0.7051 (0.317, 0.055, 0.721), g_loss: 2.3340, e_loss: 0.02316: 
+DEBUG:root: ** avg step: 16000 d_loss: 0.6921 (0.310, 0.048, 0.715), g_loss: 2.2540, e_loss: 0.02239: 
+DEBUG:root: ** avg step: 16500 d_loss: 0.7157 (0.324, 0.054, 0.729), g_loss: 2.2832, e_loss: 0.02210: 
+DEBUG:root: ** avg step: 17000 d_loss: 0.6924 (0.315, 0.048, 0.706), g_loss: 2.3043, e_loss: 0.02138: 
+DEBUG:root: ** avg step: 17500 d_loss: 0.6436 (0.291, 0.048, 0.657), g_loss: 2.4282, e_loss: 0.02168: 
+DEBUG:root: ** avg step: 18000 d_loss: 0.6841 (0.313, 0.048, 0.695), g_loss: 2.4198, e_loss: 0.02211: 
+DEBUG:root: ** avg step: 18500 d_loss: 0.6442 (0.293, 0.046, 0.656), g_loss: 2.5145, e_loss: 0.02186: 
+DEBUG:root: ** avg step: 19000 d_loss: 0.6662 (0.299, 0.052, 0.682), g_loss: 2.5018, e_loss: 0.02183: 
+DEBUG:root: ** avg step: 19500 d_loss: 0.6626 (0.300, 0.046, 0.679), g_loss: 2.4585, e_loss: 0.02055: 
+DEBUG:root: ** avg step: 20000 d_loss: 0.6309 (0.287, 0.044, 0.645), g_loss: 2.5210, e_loss: 0.02119: 
+DEBUG:root: ** avg step: 20500 d_loss: 0.6663 (0.302, 0.047, 0.681), g_loss: 2.4478, e_loss: 0.02006: 
+DEBUG:root: ** avg step: 21000 d_loss: 0.6361 (0.289, 0.042, 0.651), g_loss: 2.5378, e_loss: 0.02130: 
+DEBUG:root: ** avg step: 21500 d_loss: 0.6524 (0.295, 0.041, 0.673), g_loss: 2.5137, e_loss: 0.02024: 
+DEBUG:root: ** avg step: 22000 d_loss: 0.6044 (0.272, 0.042, 0.622), g_loss: 2.6290, e_loss: 0.02071: 
+DEBUG:root: ** avg step: 22500 d_loss: 0.6090 (0.276, 0.039, 0.628), g_loss: 2.7068, e_loss: 0.01968: 
+DEBUG:root: ** avg step: 23000 d_loss: 0.6002 (0.274, 0.039, 0.614), g_loss: 2.7106, e_loss: 0.02054: 
+DEBUG:root: ** avg step: 23500 d_loss: 0.5860 (0.270, 0.036, 0.595), g_loss: 2.7785, e_loss: 0.02096: 
+DEBUG:root: ** avg step: 24000 d_loss: 0.6062 (0.275, 0.042, 0.620), g_loss: 2.7457, e_loss: 0.02013: 
+DEBUG:root: ** avg step: 24500 d_loss: 0.5886 (0.266, 0.040, 0.605), g_loss: 2.8589, e_loss: 0.02097: 
+DEBUG:root: ** avg step: 25000 d_loss: 0.6090 (0.273, 0.038, 0.634), g_loss: 2.7038, e_loss: 0.02098: 
+DEBUG:root: ** avg step: 25500 d_loss: 0.5836 (0.264, 0.038, 0.601), g_loss: 2.8185, e_loss: 0.02048: 
+DEBUG:root: ** avg step: 26000 d_loss: 0.5626 (0.255, 0.034, 0.581), g_loss: 2.9529, e_loss: 0.01926: 
+DEBUG:root: ** avg step: 26500 d_loss: 0.5785 (0.260, 0.037, 0.599), g_loss: 2.8171, e_loss: 0.01995: 
+DEBUG:root: ** avg step: 27000 d_loss: 0.5496 (0.247, 0.035, 0.569), g_loss: 2.9290, e_loss: 0.01983: 
+DEBUG:root: ** avg step: 27500 d_loss: 0.5791 (0.255, 0.032, 0.615), g_loss: 2.9898, e_loss: 0.01952: 
+DEBUG:root: ** avg step: 28000 d_loss: 0.5387 (0.242, 0.035, 0.559), g_loss: 2.9812, e_loss: 0.01992: 
+DEBUG:root: ** avg step: 28500 d_loss: 0.5254 (0.236, 0.033, 0.545), g_loss: 3.1140, e_loss: 0.01982: 
+DEBUG:root: ** avg step: 29000 d_loss: 0.5186 (0.233, 0.030, 0.541), g_loss: 3.0963, e_loss: 0.02081: 
+DEBUG:root: ** avg step: 29500 d_loss: 0.5269 (0.243, 0.028, 0.539), g_loss: 3.1343, e_loss: 0.01906: 
+DEBUG:root: ** avg step: 30000 d_loss: 0.5513 (0.251, 0.029, 0.572), g_loss: 3.1390, e_loss: 0.01965: 
+DEBUG:root: ** avg step: 30500 d_loss: 0.5390 (0.243, 0.030, 0.561), g_loss: 3.1196, e_loss: 0.02124: 
+DEBUG:root: ** avg step: 31000 d_loss: 0.5345 (0.242, 0.027, 0.558), g_loss: 3.1304, e_loss: 0.01936: 
+DEBUG:root: ** avg step: 31500 d_loss: 0.5261 (0.241, 0.033, 0.537), g_loss: 3.1977, e_loss: 0.01953: 
+DEBUG:root: ** avg step: 32000 d_loss: 0.5207 (0.237, 0.026, 0.542), g_loss: 3.1641, e_loss: 0.01988: 
+DEBUG:root: ** avg step: 32500 d_loss: 0.5139 (0.230, 0.025, 0.542), g_loss: 3.1847, e_loss: 0.01859: 
+DEBUG:root: ** avg step: 33000 d_loss: 0.4820 (0.219, 0.029, 0.498), g_loss: 3.3107, e_loss: 0.01844: 
+DEBUG:root: ** avg step: 33500 d_loss: 0.5092 (0.231, 0.029, 0.528), g_loss: 3.1848, e_loss: 0.01885: 
+DEBUG:root: ** avg step: 34000 d_loss: 0.4984 (0.228, 0.030, 0.511), g_loss: 3.2714, e_loss: 0.01838: 
+DEBUG:root: ** avg step: 34500 d_loss: 0.4681 (0.210, 0.024, 0.491), g_loss: 3.4564, e_loss: 0.01878: 
+DEBUG:root: ** avg step: 35000 d_loss: 0.4723 (0.214, 0.025, 0.491), g_loss: 3.4731, e_loss: 0.01865: 
+DEBUG:root: ** avg step: 35500 d_loss: 0.5087 (0.229, 0.029, 0.531), g_loss: 3.2658, e_loss: 0.01960: 
+DEBUG:root: ** avg step: 36000 d_loss: 0.5090 (0.231, 0.021, 0.535), g_loss: 3.2854, e_loss: 0.01886: 
+DEBUG:root: ** avg step: 36500 d_loss: 0.4743 (0.213, 0.025, 0.498), g_loss: 3.3499, e_loss: 0.01847: 
+DEBUG:root: ** avg step: 37000 d_loss: 0.4970 (0.224, 0.024, 0.521), g_loss: 3.3294, e_loss: 0.01949: 
+DEBUG:root: ** avg step: 37500 d_loss: 0.4935 (0.226, 0.023, 0.511), g_loss: 3.3163, e_loss: 0.01907: 
+DEBUG:root: ** avg step: 38000 d_loss: 0.5057 (0.229, 0.025, 0.530), g_loss: 3.3257, e_loss: 0.01840: 
+DEBUG:root: ** avg step: 38500 d_loss: 0.5155 (0.237, 0.021, 0.536), g_loss: 3.2151, e_loss: 0.01839: 
+DEBUG:root: ** avg step: 39000 d_loss: 0.5216 (0.235, 0.022, 0.551), g_loss: 3.2448, e_loss: 0.01853: 
+DEBUG:root: ** avg step: 39500 d_loss: 0.5019 (0.229, 0.022, 0.523), g_loss: 3.2568, e_loss: 0.01898: 
+DEBUG:root: ** avg step: 40000 d_loss: 0.4614 (0.206, 0.022, 0.488), g_loss: 3.3847, e_loss: 0.01962: 
+DEBUG:root: ** avg step: 40500 d_loss: 0.5014 (0.226, 0.018, 0.532), g_loss: 3.3217, e_loss: 0.01882: 
+DEBUG:root: ** avg step: 41000 d_loss: 0.5167 (0.237, 0.020, 0.540), g_loss: 3.2046, e_loss: 0.01798: 
+DEBUG:root: ** avg step: 41500 d_loss: 0.5015 (0.226, 0.026, 0.525), g_loss: 3.3421, e_loss: 0.01902: 
+DEBUG:root: ** avg step: 42000 d_loss: 0.5085 (0.228, 0.024, 0.538), g_loss: 3.3010, e_loss: 0.01776: 
+DEBUG:root: ** avg step: 42500 d_loss: 0.4962 (0.228, 0.021, 0.515), g_loss: 3.3344, e_loss: 0.01881: 
+DEBUG:root: ** avg step: 43000 d_loss: 0.4690 (0.220, 0.015, 0.482), g_loss: 3.2719, e_loss: 0.01851: 
+DEBUG:root: ** avg step: 43500 d_loss: 0.4794 (0.211, 0.023, 0.514), g_loss: 3.3550, e_loss: 0.01802: 
+DEBUG:root: ** avg step: 44000 d_loss: 0.5097 (0.232, 0.024, 0.532), g_loss: 3.3639, e_loss: 0.01895: 
+DEBUG:root: ** avg step: 44500 d_loss: 0.4791 (0.220, 0.019, 0.498), g_loss: 3.2218, e_loss: 0.01649: 
+DEBUG:root: ** avg step: 45000 d_loss: 0.4687 (0.214, 0.020, 0.490), g_loss: 3.5352, e_loss: 0.01849: 
+DEBUG:root: ** avg step: 45500 d_loss: 0.4966 (0.226, 0.022, 0.519), g_loss: 3.3587, e_loss: 0.01846: 
+DEBUG:root: ** avg step: 46000 d_loss: 0.4817 (0.219, 0.015, 0.510), g_loss: 3.4211, e_loss: 0.01814: 
+DEBUG:root: ** avg step: 46500 d_loss: 0.4824 (0.220, 0.023, 0.502), g_loss: 3.4441, e_loss: 0.01760: 
+DEBUG:root: ** avg step: 47000 d_loss: 0.4940 (0.224, 0.019, 0.522), g_loss: 3.4062, e_loss: 0.01777: 
+DEBUG:root: ** avg step: 47500 d_loss: 0.4809 (0.217, 0.017, 0.510), g_loss: 3.3125, e_loss: 0.01718: 
+DEBUG:root: ** avg step: 48000 d_loss: 0.4607 (0.208, 0.025, 0.481), g_loss: 3.4157, e_loss: 0.01717: 
+DEBUG:root: ** avg step: 48500 d_loss: 0.4970 (0.228, 0.027, 0.511), g_loss: 3.4506, e_loss: 0.01799: 
+DEBUG:root: ** avg step: 49000 d_loss: 0.4701 (0.212, 0.016, 0.499), g_loss: 3.4994, e_loss: 0.01785: 
+DEBUG:root: ** avg step: 49500 d_loss: 0.4520 (0.206, 0.017, 0.474), g_loss: 3.4468, e_loss: 0.01789: 
+DEBUG:root: ** new learning rate: 0.000100
+DEBUG:root: ** avg step: 50000 d_loss: 0.4443 (0.205, 0.021, 0.459), g_loss: 3.5508, e_loss: 0.01778: 
+DEBUG:root: ** avg step: 50500 d_loss: 0.2939 (0.141, 0.012, 0.294), g_loss: 3.0119, e_loss: 0.01631: 
+DEBUG:root: ** avg step: 51000 d_loss: 0.2971 (0.140, 0.014, 0.300), g_loss: 3.1245, e_loss: 0.01751: 
+DEBUG:root: ** avg step: 51500 d_loss: 0.2769 (0.130, 0.014, 0.281), g_loss: 3.3523, e_loss: 0.01673: 
+DEBUG:root: ** avg step: 52000 d_loss: 0.2803 (0.134, 0.011, 0.281), g_loss: 3.5472, e_loss: 0.01637: 
+DEBUG:root: ** avg step: 52500 d_loss: 0.2711 (0.128, 0.013, 0.273), g_loss: 3.4564, e_loss: 0.01705: 
+DEBUG:root: ** avg step: 53000 d_loss: 0.2764 (0.131, 0.012, 0.279), g_loss: 3.5017, e_loss: 0.01610: 
+DEBUG:root: ** avg step: 53500 d_loss: 0.2692 (0.127, 0.014, 0.272), g_loss: 3.5811, e_loss: 0.01706: 
+DEBUG:root: ** avg step: 54000 d_loss: 0.2611 (0.124, 0.014, 0.261), g_loss: 3.5952, e_loss: 0.01640: 
+DEBUG:root: ** avg step: 54500 d_loss: 0.3145 (0.152, 0.014, 0.310), g_loss: 3.5198, e_loss: 0.01652: 
+DEBUG:root: ** avg step: 55000 d_loss: 0.2799 (0.132, 0.012, 0.284), g_loss: 3.6525, e_loss: 0.01591: 
+DEBUG:root: ** avg step: 55500 d_loss: 0.2657 (0.124, 0.012, 0.272), g_loss: 3.5576, e_loss: 0.01526: 
+DEBUG:root: ** avg step: 56000 d_loss: 0.2633 (0.122, 0.011, 0.271), g_loss: 3.8103, e_loss: 0.01611: 
+DEBUG:root: ** avg step: 56500 d_loss: 0.2821 (0.133, 0.014, 0.284), g_loss: 3.6156, e_loss: 0.01554: 
+DEBUG:root: ** avg step: 57000 d_loss: 0.2726 (0.127, 0.011, 0.280), g_loss: 3.8118, e_loss: 0.01559: 
+DEBUG:root: ** avg step: 57500 d_loss: 0.2391 (0.111, 0.012, 0.244), g_loss: 3.7668, e_loss: 0.01567: 
+DEBUG:root: ** avg step: 58000 d_loss: 0.2696 (0.128, 0.013, 0.271), g_loss: 3.7679, e_loss: 0.01559: 
+DEBUG:root: ** avg step: 58500 d_loss: 0.2808 (0.135, 0.010, 0.281), g_loss: 3.6753, e_loss: 0.01613: 
+DEBUG:root: ** avg step: 59000 d_loss: 0.2607 (0.122, 0.010, 0.267), g_loss: 3.9668, e_loss: 0.01492: 
+DEBUG:root: ** avg step: 59500 d_loss: 0.2790 (0.130, 0.010, 0.288), g_loss: 3.8877, e_loss: 0.01586: 
+DEBUG:root: ** avg step: 60000 d_loss: 0.2815 (0.136, 0.016, 0.275), g_loss: 3.8227, e_loss: 0.01576: 
+DEBUG:root: ** avg step: 60500 d_loss: 0.2888 (0.137, 0.013, 0.291), g_loss: 3.9144, e_loss: 0.01583: 
+DEBUG:root: ** avg step: 61000 d_loss: 0.2386 (0.112, 0.008, 0.246), g_loss: 3.7507, e_loss: 0.01583: 
+DEBUG:root: ** avg step: 61500 d_loss: 0.2867 (0.134, 0.009, 0.297), g_loss: 3.8939, e_loss: 0.01563: 
+DEBUG:root: ** avg step: 62000 d_loss: 0.2836 (0.134, 0.011, 0.289), g_loss: 3.7828, e_loss: 0.01504: 
+DEBUG:root: ** avg step: 62500 d_loss: 0.2844 (0.133, 0.010, 0.292), g_loss: 3.8303, e_loss: 0.01596: 
+DEBUG:root: ** avg step: 63000 d_loss: 0.2887 (0.136, 0.008, 0.298), g_loss: 3.7133, e_loss: 0.01579: 
+DEBUG:root: ** avg step: 63500 d_loss: 0.2878 (0.133, 0.009, 0.301), g_loss: 3.9138, e_loss: 0.01574: 
+DEBUG:root: ** avg step: 64000 d_loss: 0.2762 (0.131, 0.011, 0.280), g_loss: 3.8560, e_loss: 0.01561: 
+DEBUG:root: ** avg step: 64500 d_loss: 0.2557 (0.123, 0.008, 0.257), g_loss: 3.9152, e_loss: 0.01532: 
+DEBUG:root: ** avg step: 65000 d_loss: 0.2544 (0.120, 0.008, 0.261), g_loss: 4.0160, e_loss: 0.01562: 
+DEBUG:root: ** avg step: 65500 d_loss: 0.2602 (0.123, 0.012, 0.261), g_loss: 4.0078, e_loss: 0.01531: 
+DEBUG:root: ** avg step: 66000 d_loss: 0.2778 (0.134, 0.012, 0.276), g_loss: 3.9760, e_loss: 0.01575: 
+DEBUG:root: ** avg step: 66500 d_loss: 0.2509 (0.118, 0.010, 0.256), g_loss: 4.0512, e_loss: 0.01542: 
+DEBUG:root: ** avg step: 67000 d_loss: 0.2916 (0.135, 0.011, 0.304), g_loss: 3.9469, e_loss: 0.01569: 
+DEBUG:root: ** avg step: 67500 d_loss: 0.2631 (0.122, 0.007, 0.275), g_loss: 4.0131, e_loss: 0.01449: 
+DEBUG:root: ** avg step: 68000 d_loss: 0.2605 (0.123, 0.010, 0.265), g_loss: 4.0512, e_loss: 0.01550: 
+DEBUG:root: ** avg step: 68500 d_loss: 0.2843 (0.137, 0.013, 0.282), g_loss: 3.9457, e_loss: 0.01513: 
+DEBUG:root: ** avg step: 69000 d_loss: 0.2608 (0.120, 0.010, 0.271), g_loss: 4.0718, e_loss: 0.01534: 
+DEBUG:root: ** avg step: 69500 d_loss: 0.2652 (0.125, 0.011, 0.269), g_loss: 4.0804, e_loss: 0.01566: 
+DEBUG:root: ** avg step: 70000 d_loss: 0.2971 (0.140, 0.010, 0.305), g_loss: 4.0907, e_loss: 0.01508: 
+DEBUG:root: ** avg step: 70500 d_loss: 0.2527 (0.118, 0.011, 0.259), g_loss: 4.0664, e_loss: 0.01443: 
+DEBUG:root: ** avg step: 71000 d_loss: 0.2973 (0.142, 0.011, 0.300), g_loss: 4.1296, e_loss: 0.01494: 
+DEBUG:root: ** avg step: 71500 d_loss: 0.2847 (0.135, 0.012, 0.287), g_loss: 3.9720, e_loss: 0.01539: 
+DEBUG:root: ** avg step: 72000 d_loss: 0.2657 (0.125, 0.011, 0.271), g_loss: 3.9617, e_loss: 0.01509: 
+DEBUG:root: ** avg step: 72500 d_loss: 0.2482 (0.115, 0.010, 0.256), g_loss: 4.0750, e_loss: 0.01582: 
+DEBUG:root: ** avg step: 73000 d_loss: 0.2513 (0.116, 0.010, 0.260), g_loss: 4.0639, e_loss: 0.01584: 
+DEBUG:root: ** avg step: 73500 d_loss: 0.2612 (0.126, 0.010, 0.261), g_loss: 4.1683, e_loss: 0.01487: 
+DEBUG:root: ** avg step: 74000 d_loss: 0.2786 (0.130, 0.009, 0.289), g_loss: 4.1219, e_loss: 0.01515: 
+DEBUG:root: ** avg step: 74500 d_loss: 0.2954 (0.134, 0.011, 0.312), g_loss: 4.1909, e_loss: 0.01504: 
+DEBUG:root: ** avg step: 75000 d_loss: 0.2593 (0.119, 0.008, 0.272), g_loss: 3.9700, e_loss: 0.01491: 
+DEBUG:root: ** avg step: 75500 d_loss: 0.2442 (0.114, 0.008, 0.253), g_loss: 4.3171, e_loss: 0.01516: 
+DEBUG:root: ** avg step: 76000 d_loss: 0.2686 (0.127, 0.011, 0.273), g_loss: 4.2226, e_loss: 0.01588: 
+DEBUG:root: ** avg step: 76500 d_loss: 0.2481 (0.119, 0.008, 0.249), g_loss: 4.0421, e_loss: 0.01630: 
+DEBUG:root: ** avg step: 77000 d_loss: 0.2558 (0.120, 0.009, 0.262), g_loss: 4.0758, e_loss: 0.01636: 
+DEBUG:root: ** avg step: 77500 d_loss: 0.2787 (0.132, 0.011, 0.283), g_loss: 4.0945, e_loss: 0.01521: 
+DEBUG:root: ** avg step: 78000 d_loss: 0.2626 (0.124, 0.010, 0.267), g_loss: 4.0587, e_loss: 0.01514: 
+DEBUG:root: ** avg step: 78500 d_loss: 0.2690 (0.126, 0.011, 0.275), g_loss: 4.1269, e_loss: 0.01518: 
+DEBUG:root: ** avg step: 79000 d_loss: 0.2998 (0.144, 0.009, 0.302), g_loss: 3.9964, e_loss: 0.01511: 
+DEBUG:root: ** avg step: 79500 d_loss: 0.2657 (0.122, 0.008, 0.279), g_loss: 4.0095, e_loss: 0.01553: 
+DEBUG:root: ** avg step: 80000 d_loss: 0.2781 (0.131, 0.010, 0.286), g_loss: 4.1157, e_loss: 0.01516: 
+DEBUG:root: ** avg step: 80500 d_loss: 0.2525 (0.116, 0.010, 0.262), g_loss: 4.0615, e_loss: 0.01495: 
+DEBUG:root: ** avg step: 81000 d_loss: 0.2656 (0.127, 0.011, 0.267), g_loss: 4.1615, e_loss: 0.01437: 
+DEBUG:root: ** avg step: 81500 d_loss: 0.2689 (0.128, 0.010, 0.271), g_loss: 4.0777, e_loss: 0.01484: 
+DEBUG:root: ** avg step: 82000 d_loss: 0.2458 (0.119, 0.009, 0.245), g_loss: 4.1576, e_loss: 0.01532: 
+DEBUG:root: ** avg step: 82500 d_loss: 0.2837 (0.132, 0.013, 0.291), g_loss: 4.1844, e_loss: 0.01437: 
+DEBUG:root: ** avg step: 83000 d_loss: 0.2468 (0.114, 0.009, 0.258), g_loss: 4.2084, e_loss: 0.01461: 
+DEBUG:root: ** avg step: 83500 d_loss: 0.2764 (0.124, 0.008, 0.296), g_loss: 4.2868, e_loss: 0.01553: 
+DEBUG:root: ** avg step: 84000 d_loss: 0.2718 (0.122, 0.010, 0.290), g_loss: 4.2106, e_loss: 0.01490: 
+DEBUG:root: ** avg step: 84500 d_loss: 0.2787 (0.126, 0.012, 0.294), g_loss: 4.1890, e_loss: 0.01565: 
+DEBUG:root: ** avg step: 85000 d_loss: 0.2742 (0.131, 0.009, 0.277), g_loss: 4.2858, e_loss: 0.01439: 
+DEBUG:root: ** avg step: 85500 d_loss: 0.2233 (0.104, 0.006, 0.232), g_loss: 4.1921, e_loss: 0.01558: 
+DEBUG:root: ** avg step: 86000 d_loss: 0.2577 (0.120, 0.010, 0.265), g_loss: 4.3705, e_loss: 0.01558: 
+DEBUG:root: ** avg step: 86500 d_loss: 0.2493 (0.117, 0.008, 0.257), g_loss: 4.3705, e_loss: 0.01521: 
+DEBUG:root: ** avg step: 87000 d_loss: 0.2750 (0.129, 0.011, 0.281), g_loss: 4.3293, e_loss: 0.01553: 
+DEBUG:root: ** avg step: 87500 d_loss: 0.2552 (0.116, 0.012, 0.267), g_loss: 4.3246, e_loss: 0.01546: 
+DEBUG:root: ** avg step: 88000 d_loss: 0.2232 (0.107, 0.007, 0.224), g_loss: 4.1416, e_loss: 0.01494: 
+DEBUG:root: ** avg step: 88500 d_loss: 0.2380 (0.114, 0.007, 0.241), g_loss: 4.4408, e_loss: 0.01476: 
+DEBUG:root: ** avg step: 89000 d_loss: 0.2717 (0.118, 0.011, 0.295), g_loss: 4.3782, e_loss: 0.01563: 
+DEBUG:root: ** avg step: 89500 d_loss: 0.2662 (0.124, 0.007, 0.278), g_loss: 4.4011, e_loss: 0.01509: 
+DEBUG:root: ** avg step: 90000 d_loss: 0.2370 (0.111, 0.013, 0.239), g_loss: 4.5073, e_loss: 0.01521: 
+DEBUG:root: ** avg step: 90500 d_loss: 0.2809 (0.128, 0.012, 0.294), g_loss: 4.3816, e_loss: 0.01508: 
+DEBUG:root: ** avg step: 91000 d_loss: 0.2522 (0.115, 0.009, 0.266), g_loss: 4.3435, e_loss: 0.01511: 
+DEBUG:root: ** avg step: 91500 d_loss: 0.2569 (0.118, 0.008, 0.270), g_loss: 4.2102, e_loss: 0.01528: 
+DEBUG:root: ** avg step: 92000 d_loss: 0.2440 (0.114, 0.009, 0.250), g_loss: 4.2481, e_loss: 0.01419: 
+DEBUG:root: ** avg step: 92500 d_loss: 0.2590 (0.125, 0.008, 0.259), g_loss: 4.3298, e_loss: 0.01456: 
+DEBUG:root: ** avg step: 93000 d_loss: 0.2608 (0.121, 0.010, 0.270), g_loss: 4.3115, e_loss: 0.01544: 
+DEBUG:root: ** avg step: 93500 d_loss: 0.2382 (0.108, 0.008, 0.253), g_loss: 4.5752, e_loss: 0.01393: 
+DEBUG:root: ** avg step: 94000 d_loss: 0.2278 (0.103, 0.008, 0.242), g_loss: 4.5399, e_loss: 0.01474: 
+DEBUG:root: ** avg step: 94500 d_loss: 0.2412 (0.114, 0.006, 0.249), g_loss: 4.4989, e_loss: 0.01421: 
+DEBUG:root: ** avg step: 95000 d_loss: 0.2696 (0.124, 0.008, 0.283), g_loss: 4.4151, e_loss: 0.01553: 
+DEBUG:root: ** avg step: 95500 d_loss: 0.2596 (0.125, 0.013, 0.257), g_loss: 4.3985, e_loss: 0.01435: 
+DEBUG:root: ** avg step: 96000 d_loss: 0.2552 (0.120, 0.010, 0.260), g_loss: 4.4471, e_loss: 0.01447: 
+DEBUG:root: ** avg step: 96500 d_loss: 0.2613 (0.122, 0.011, 0.268), g_loss: 4.3859, e_loss: 0.01528: 
+DEBUG:root: ** avg step: 97000 d_loss: 0.2349 (0.110, 0.007, 0.243), g_loss: 4.3414, e_loss: 0.01412: 
+DEBUG:root: ** avg step: 97500 d_loss: 0.2536 (0.117, 0.006, 0.266), g_loss: 4.4145, e_loss: 0.01455: 
+DEBUG:root: ** avg step: 98000 d_loss: 0.2454 (0.112, 0.010, 0.256), g_loss: 4.4778, e_loss: 0.01392: 
+DEBUG:root: ** avg step: 98500 d_loss: 0.2281 (0.103, 0.008, 0.242), g_loss: 4.5112, e_loss: 0.01467: 
+DEBUG:root: ** avg step: 99000 d_loss: 0.2250 (0.102, 0.009, 0.238), g_loss: 4.7272, e_loss: 0.01449: 
+DEBUG:root: ** avg step: 99500 d_loss: 0.2808 (0.138, 0.008, 0.278), g_loss: 4.3259, e_loss: 0.01498: 
+DEBUG:root: ** new learning rate: 0.000050
+DEBUG:root: ** avg step: 100000 d_loss: 0.2433 (0.111, 0.011, 0.253), g_loss: 4.4581, e_loss: 0.01490: 
+DEBUG:root: ** avg step: 100500 d_loss: 0.1479 (0.072, 0.005, 0.147), g_loss: 3.8108, e_loss: 0.01488: 
+DEBUG:root: ** avg step: 101000 d_loss: 0.1503 (0.074, 0.007, 0.145), g_loss: 4.1471, e_loss: 0.01395: 
+DEBUG:root: ** avg step: 101500 d_loss: 0.1457 (0.072, 0.005, 0.142), g_loss: 4.1024, e_loss: 0.01475: 
+DEBUG:root: ** avg step: 102000 d_loss: 0.1322 (0.065, 0.004, 0.130), g_loss: 4.2215, e_loss: 0.01409: 
+DEBUG:root: ** avg step: 102500 d_loss: 0.1740 (0.085, 0.007, 0.171), g_loss: 4.1589, e_loss: 0.01373: 
+DEBUG:root: ** avg step: 103000 d_loss: 0.1431 (0.067, 0.008, 0.144), g_loss: 4.2642, e_loss: 0.01484: 
+DEBUG:root: ** avg step: 103500 d_loss: 0.1518 (0.075, 0.008, 0.146), g_loss: 4.1398, e_loss: 0.01385: 
+DEBUG:root: ** avg step: 104000 d_loss: 0.1522 (0.075, 0.007, 0.148), g_loss: 4.2290, e_loss: 0.01420: 
+DEBUG:root: ** avg step: 104500 d_loss: 0.1473 (0.072, 0.006, 0.144), g_loss: 4.2311, e_loss: 0.01386: 
+DEBUG:root: ** avg step: 105000 d_loss: 0.1314 (0.063, 0.009, 0.128), g_loss: 4.3410, e_loss: 0.01445: 
+DEBUG:root: ** avg step: 105500 d_loss: 0.1496 (0.069, 0.006, 0.155), g_loss: 4.5060, e_loss: 0.01346: 
+DEBUG:root: ** avg step: 106000 d_loss: 0.1728 (0.083, 0.005, 0.174), g_loss: 4.2765, e_loss: 0.01457: 
+DEBUG:root: ** avg step: 106500 d_loss: 0.1437 (0.069, 0.008, 0.142), g_loss: 4.2300, e_loss: 0.01395: 
+DEBUG:root: ** avg step: 107000 d_loss: 0.2001 (0.101, 0.007, 0.190), g_loss: 4.2716, e_loss: 0.01453: 
+DEBUG:root: ** avg step: 107500 d_loss: 0.1452 (0.069, 0.006, 0.145), g_loss: 4.3617, e_loss: 0.01342: 
+DEBUG:root: ** avg step: 108000 d_loss: 0.1518 (0.077, 0.006, 0.143), g_loss: 4.3779, e_loss: 0.01407: 
+DEBUG:root: ** avg step: 108500 d_loss: 0.1393 (0.068, 0.006, 0.137), g_loss: 4.3680, e_loss: 0.01393: 
+DEBUG:root: ** avg step: 109000 d_loss: 0.1389 (0.068, 0.005, 0.137), g_loss: 4.3512, e_loss: 0.01376: 
+DEBUG:root: ** avg step: 109500 d_loss: 0.1342 (0.065, 0.005, 0.134), g_loss: 4.5227, e_loss: 0.01345: 
+DEBUG:root: ** avg step: 110000 d_loss: 0.1357 (0.064, 0.006, 0.138), g_loss: 4.4108, e_loss: 0.01470: 
+DEBUG:root: ** avg step: 110500 d_loss: 0.1605 (0.077, 0.005, 0.162), g_loss: 4.3849, e_loss: 0.01391: 
+DEBUG:root: ** avg step: 111000 d_loss: 0.1576 (0.076, 0.006, 0.158), g_loss: 4.3753, e_loss: 0.01369: 
+DEBUG:root: ** avg step: 111500 d_loss: 0.1567 (0.076, 0.006, 0.155), g_loss: 4.5210, e_loss: 0.01464: 
+DEBUG:root: ** avg step: 112000 d_loss: 0.1224 (0.057, 0.005, 0.126), g_loss: 4.4213, e_loss: 0.01398: 
+DEBUG:root: ** avg step: 112500 d_loss: 0.1610 (0.077, 0.007, 0.161), g_loss: 4.4918, e_loss: 0.01365: 
+DEBUG:root: ** avg step: 113000 d_loss: 0.1676 (0.085, 0.010, 0.156), g_loss: 4.3284, e_loss: 0.01499: 
+DEBUG:root: ** avg step: 113500 d_loss: 0.1496 (0.073, 0.004, 0.149), g_loss: 4.3846, e_loss: 0.01395: 
+DEBUG:root: ** avg step: 114000 d_loss: 0.1542 (0.074, 0.007, 0.153), g_loss: 4.3063, e_loss: 0.01363: 
+DEBUG:root: ** avg step: 114500 d_loss: 0.1665 (0.081, 0.005, 0.166), g_loss: 4.4215, e_loss: 0.01366: 
+DEBUG:root: ** avg step: 115000 d_loss: 0.1351 (0.065, 0.004, 0.136), g_loss: 4.3522, e_loss: 0.01387: 
+DEBUG:root: ** avg step: 115500 d_loss: 0.1526 (0.073, 0.008, 0.152), g_loss: 4.4007, e_loss: 0.01316: 
+DEBUG:root: ** avg step: 116000 d_loss: 0.1187 (0.058, 0.005, 0.116), g_loss: 4.5319, e_loss: 0.01314: 
+DEBUG:root: ** avg step: 116500 d_loss: 0.1444 (0.067, 0.006, 0.149), g_loss: 4.6224, e_loss: 0.01348: 
+DEBUG:root: ** avg step: 117000 d_loss: 0.1261 (0.064, 0.008, 0.115), g_loss: 4.5287, e_loss: 0.01369: 
+DEBUG:root: ** avg step: 117500 d_loss: 0.1368 (0.064, 0.004, 0.141), g_loss: 4.5161, e_loss: 0.01449: 
+DEBUG:root: ** avg step: 118000 d_loss: 0.1517 (0.071, 0.005, 0.156), g_loss: 4.5487, e_loss: 0.01428: 
+DEBUG:root: ** avg step: 118500 d_loss: 0.1535 (0.075, 0.007, 0.149), g_loss: 4.6557, e_loss: 0.01425: 
+DEBUG:root: ** avg step: 119000 d_loss: 0.1751 (0.085, 0.008, 0.172), g_loss: 4.4603, e_loss: 0.01474: 
+DEBUG:root: ** avg step: 119500 d_loss: 0.1451 (0.072, 0.006, 0.140), g_loss: 4.4740, e_loss: 0.01379: 
+DEBUG:root: ** avg step: 120000 d_loss: 0.1621 (0.081, 0.005, 0.158), g_loss: 4.4470, e_loss: 0.01394: 
+DEBUG:root: ** avg step: 120500 d_loss: 0.1338 (0.065, 0.005, 0.133), g_loss: 4.4519, e_loss: 0.01404: 
+DEBUG:root: ** avg step: 121000 d_loss: 0.1462 (0.070, 0.006, 0.146), g_loss: 4.5357, e_loss: 0.01403: 
+DEBUG:root: ** avg step: 121500 d_loss: 0.1454 (0.068, 0.007, 0.147), g_loss: 4.6508, e_loss: 0.01419: 
+DEBUG:root: ** avg step: 122000 d_loss: 0.1482 (0.071, 0.006, 0.148), g_loss: 4.6558, e_loss: 0.01344: 
+DEBUG:root: ** avg step: 122500 d_loss: 0.1375 (0.067, 0.005, 0.136), g_loss: 4.5588, e_loss: 0.01444: 
+DEBUG:root: ** avg step: 123000 d_loss: 0.1544 (0.076, 0.006, 0.152), g_loss: 4.6234, e_loss: 0.01383: 
+DEBUG:root: ** avg step: 123500 d_loss: 0.1318 (0.062, 0.006, 0.134), g_loss: 4.6236, e_loss: 0.01394: 
+DEBUG:root: ** avg step: 124000 d_loss: 0.1409 (0.068, 0.006, 0.141), g_loss: 4.6057, e_loss: 0.01404: 
+DEBUG:root: ** avg step: 124500 d_loss: 0.1357 (0.065, 0.005, 0.136), g_loss: 4.7954, e_loss: 0.01388: 
+DEBUG:root: ** avg step: 125000 d_loss: 0.1661 (0.082, 0.004, 0.165), g_loss: 4.5914, e_loss: 0.01447: 
+DEBUG:root: ** avg step: 125500 d_loss: 0.1490 (0.071, 0.008, 0.148), g_loss: 4.6166, e_loss: 0.01318: 
+DEBUG:root: ** avg step: 126000 d_loss: 0.1585 (0.079, 0.006, 0.153), g_loss: 4.5848, e_loss: 0.01404: 
+DEBUG:root: ** avg step: 126500 d_loss: 0.1719 (0.081, 0.007, 0.175), g_loss: 4.4654, e_loss: 0.01359: 
+DEBUG:root: ** avg step: 127000 d_loss: 0.1451 (0.068, 0.005, 0.150), g_loss: 4.5642, e_loss: 0.01317: 
+DEBUG:root: ** avg step: 127500 d_loss: 0.1419 (0.066, 0.006, 0.146), g_loss: 4.5117, e_loss: 0.01403: 
+DEBUG:root: ** avg step: 128000 d_loss: 0.1698 (0.085, 0.005, 0.164), g_loss: 4.5237, e_loss: 0.01335: 
+DEBUG:root: ** avg step: 128500 d_loss: 0.1430 (0.071, 0.006, 0.138), g_loss: 4.5941, e_loss: 0.01394: 
+DEBUG:root: ** avg step: 129000 d_loss: 0.1388 (0.067, 0.005, 0.138), g_loss: 4.5945, e_loss: 0.01398: 
+DEBUG:root: ** avg step: 129500 d_loss: 0.1272 (0.060, 0.005, 0.131), g_loss: 4.6229, e_loss: 0.01437: 
+DEBUG:root: ** avg step: 130000 d_loss: 0.1315 (0.064, 0.008, 0.126), g_loss: 4.7900, e_loss: 0.01433: 
+DEBUG:root: ** avg step: 130500 d_loss: 0.1271 (0.059, 0.003, 0.132), g_loss: 4.6651, e_loss: 0.01374: 
+DEBUG:root: ** avg step: 131000 d_loss: 0.1277 (0.063, 0.004, 0.125), g_loss: 4.8561, e_loss: 0.01482: 
+DEBUG:root: ** avg step: 131500 d_loss: 0.1627 (0.078, 0.005, 0.164), g_loss: 4.8057, e_loss: 0.01369: 
+DEBUG:root: ** avg step: 132000 d_loss: 0.1395 (0.069, 0.004, 0.138), g_loss: 4.7434, e_loss: 0.01352: 
+DEBUG:root: ** avg step: 132500 d_loss: 0.1604 (0.076, 0.006, 0.162), g_loss: 4.5833, e_loss: 0.01420: 
+DEBUG:root: ** avg step: 133000 d_loss: 0.1381 (0.067, 0.006, 0.136), g_loss: 4.7034, e_loss: 0.01383: 
+DEBUG:root: ** avg step: 133500 d_loss: 0.1238 (0.059, 0.004, 0.126), g_loss: 4.6567, e_loss: 0.01386: 
+DEBUG:root: ** avg step: 134000 d_loss: 0.1237 (0.059, 0.006, 0.124), g_loss: 5.0193, e_loss: 0.01364: 
+DEBUG:root: ** avg step: 134500 d_loss: 0.1768 (0.083, 0.009, 0.178), g_loss: 4.6821, e_loss: 0.01385: 
+DEBUG:root: ** avg step: 135000 d_loss: 0.1364 (0.065, 0.005, 0.138), g_loss: 4.6968, e_loss: 0.01388: 
+DEBUG:root: ** avg step: 135500 d_loss: 0.1403 (0.067, 0.006, 0.142), g_loss: 4.7894, e_loss: 0.01342: 
+DEBUG:root: ** avg step: 136000 d_loss: 0.1363 (0.064, 0.003, 0.140), g_loss: 4.7933, e_loss: 0.01382: 
+DEBUG:root: ** avg step: 136500 d_loss: 0.1111 (0.052, 0.004, 0.114), g_loss: 4.8156, e_loss: 0.01313: 
+DEBUG:root: ** avg step: 137000 d_loss: 0.1681 (0.079, 0.005, 0.173), g_loss: 5.0569, e_loss: 0.01390: 
+DEBUG:root: ** avg step: 137500 d_loss: 0.1233 (0.060, 0.005, 0.122), g_loss: 4.7448, e_loss: 0.01346: 
+DEBUG:root: ** avg step: 138000 d_loss: 0.1449 (0.071, 0.005, 0.142), g_loss: 4.7511, e_loss: 0.01391: 
+DEBUG:root: ** avg step: 138500 d_loss: 0.1401 (0.065, 0.006, 0.144), g_loss: 4.9844, e_loss: 0.01317: 
+DEBUG:root: ** avg step: 139000 d_loss: 0.1301 (0.063, 0.004, 0.130), g_loss: 4.8156, e_loss: 0.01453: 
+DEBUG:root: ** avg step: 139500 d_loss: 0.1260 (0.060, 0.005, 0.127), g_loss: 4.7823, e_loss: 0.01298: 
+DEBUG:root: ** avg step: 140000 d_loss: 0.1609 (0.079, 0.006, 0.157), g_loss: 4.7155, e_loss: 0.01420: 
+DEBUG:root: ** avg step: 140500 d_loss: 0.1422 (0.067, 0.004, 0.147), g_loss: 4.7431, e_loss: 0.01373: 
+DEBUG:root: ** avg step: 141000 d_loss: 0.1373 (0.066, 0.005, 0.137), g_loss: 4.8650, e_loss: 0.01353: 
+DEBUG:root: ** avg step: 141500 d_loss: 0.1450 (0.069, 0.005, 0.146), g_loss: 4.8172, e_loss: 0.01340: 
+DEBUG:root: ** avg step: 142000 d_loss: 0.1418 (0.068, 0.005, 0.144), g_loss: 4.9787, e_loss: 0.01481: 
+DEBUG:root: ** avg step: 142500 d_loss: 0.1426 (0.067, 0.006, 0.144), g_loss: 4.7074, e_loss: 0.01398: 
+DEBUG:root: ** avg step: 143000 d_loss: 0.1509 (0.074, 0.005, 0.148), g_loss: 4.7433, e_loss: 0.01380: 
+DEBUG:root: ** avg step: 143500 d_loss: 0.1680 (0.076, 0.004, 0.181), g_loss: 4.7166, e_loss: 0.01458: 
+DEBUG:root: ** avg step: 144000 d_loss: 0.1428 (0.072, 0.006, 0.136), g_loss: 4.7507, e_loss: 0.01387: 
+DEBUG:root: ** avg step: 144500 d_loss: 0.1503 (0.071, 0.003, 0.155), g_loss: 4.8256, e_loss: 0.01405: 
+DEBUG:root: ** avg step: 145000 d_loss: 0.1376 (0.066, 0.004, 0.140), g_loss: 4.9045, e_loss: 0.01365: 
+DEBUG:root: ** avg step: 145500 d_loss: 0.1465 (0.068, 0.006, 0.151), g_loss: 4.8687, e_loss: 0.01314: 
+DEBUG:root: ** avg step: 146000 d_loss: 0.1173 (0.056, 0.003, 0.120), g_loss: 4.8207, e_loss: 0.01370: 
+DEBUG:root: ** avg step: 146500 d_loss: 0.1336 (0.065, 0.006, 0.131), g_loss: 4.7503, e_loss: 0.01412: 
+DEBUG:root: ** avg step: 147000 d_loss: 0.1362 (0.063, 0.005, 0.142), g_loss: 4.9314, e_loss: 0.01368: 
+DEBUG:root: ** avg step: 147500 d_loss: 0.1297 (0.061, 0.007, 0.130), g_loss: 4.9921, e_loss: 0.01382: 
+DEBUG:root: ** avg step: 148000 d_loss: 0.1518 (0.070, 0.005, 0.160), g_loss: 4.9424, e_loss: 0.01478: 
+DEBUG:root: ** avg step: 148500 d_loss: 0.1333 (0.068, 0.005, 0.126), g_loss: 4.8968, e_loss: 0.01322: 
+DEBUG:root: ** avg step: 149000 d_loss: 0.1380 (0.065, 0.004, 0.142), g_loss: 4.7804, e_loss: 0.01362: 
+DEBUG:root: ** avg step: 149500 d_loss: 0.1400 (0.070, 0.006, 0.135), g_loss: 4.8944, e_loss: 0.01352: 
+DEBUG:root: ** new learning rate: 0.000025
+DEBUG:root: ** avg step: 150000 d_loss: 0.1564 (0.074, 0.008, 0.157), g_loss: 4.7694, e_loss: 0.01397: 
+DEBUG:root: ** avg step: 150500 d_loss: 0.1006 (0.051, 0.002, 0.097), g_loss: 4.2360, e_loss: 0.01374: 
+DEBUG:root: ** avg step: 151000 d_loss: 0.0843 (0.041, 0.005, 0.081), g_loss: 4.4914, e_loss: 0.01328: 
+DEBUG:root: ** avg step: 151500 d_loss: 0.1070 (0.056, 0.006, 0.097), g_loss: 4.2958, e_loss: 0.01405: 
+DEBUG:root: ** avg step: 152000 d_loss: 0.0841 (0.041, 0.003, 0.084), g_loss: 4.7299, e_loss: 0.01294: 
+DEBUG:root: ** avg step: 152500 d_loss: 0.0910 (0.043, 0.007, 0.088), g_loss: 4.7494, e_loss: 0.01322: 
+DEBUG:root: ** avg step: 153000 d_loss: 0.0922 (0.046, 0.003, 0.089), g_loss: 4.7781, e_loss: 0.01342: 
+DEBUG:root: ** avg step: 153500 d_loss: 0.0870 (0.045, 0.003, 0.081), g_loss: 4.8117, e_loss: 0.01312: 
+DEBUG:root: ** avg step: 154000 d_loss: 0.0995 (0.052, 0.004, 0.091), g_loss: 4.6946, e_loss: 0.01397: 
+DEBUG:root: ** avg step: 154500 d_loss: 0.0712 (0.035, 0.004, 0.069), g_loss: 4.7435, e_loss: 0.01349: 
+DEBUG:root: ** avg step: 155000 d_loss: 0.0882 (0.044, 0.003, 0.085), g_loss: 4.7855, e_loss: 0.01388: 
+DEBUG:root: ** avg step: 155500 d_loss: 0.1032 (0.050, 0.005, 0.102), g_loss: 4.8982, e_loss: 0.01272: 
+DEBUG:root: ** avg step: 156000 d_loss: 0.0983 (0.050, 0.004, 0.092), g_loss: 4.7225, e_loss: 0.01317: 
+DEBUG:root: ** avg step: 156500 d_loss: 0.0929 (0.045, 0.004, 0.091), g_loss: 4.8232, e_loss: 0.01310: 
+DEBUG:root: ** avg step: 157000 d_loss: 0.0761 (0.037, 0.004, 0.075), g_loss: 4.6944, e_loss: 0.01373: 
+DEBUG:root: ** avg step: 157500 d_loss: 0.1000 (0.048, 0.003, 0.101), g_loss: 4.8218, e_loss: 0.01350: 
+DEBUG:root: ** avg step: 158000 d_loss: 0.0851 (0.042, 0.004, 0.081), g_loss: 4.6802, e_loss: 0.01333: 
+DEBUG:root: ** avg step: 158500 d_loss: 0.0954 (0.046, 0.004, 0.096), g_loss: 4.8444, e_loss: 0.01305: 
+DEBUG:root: ** avg step: 159000 d_loss: 0.0919 (0.046, 0.003, 0.089), g_loss: 4.7572, e_loss: 0.01339: 
