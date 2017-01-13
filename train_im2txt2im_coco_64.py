@@ -247,10 +247,15 @@ def discriminator_txt2img(input_images, net_rnn_embed=None, is_train=True, reuse
                    W_init=w_init,# b_init = None,  #<-
                    name='d_reduce_txt/dense')
             # net_rnn_embed.outputs = tl.act.lrelu(net_rnn_embed.outputs, 0.2)
-            # net_reduced_text = net_rnn_embed  # if reduce_txt in rnn_embed
-            net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 1)
-            net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 2)
-            net_reduced_text.outputs = tf.tile(net_reduced_text.outputs, [1, 4, 4, 1], name='d_tiled_embeddings')
+                # net_reduced_text = net_rnn_embed  # if reduce_txt in rnn_embed
+            ## no TL
+            # net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 1)
+            # net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 2)
+            # net_reduced_text.outputs = tf.tile(net_reduced_text.outputs, [1, 4, 4, 1], name='d_tiled_embeddings')
+            ## TL
+            net_reduced_text = ExpandDimsLayer(net_reduced_text, axis=1, name='expand_dims1')
+            net_reduced_text = ExpandDimsLayer(net_reduced_text, axis=2, name='expand_dims2')
+            net_reduced_text = TileLayer(net_reduced_text, multiples=[1, 4, 4, 1], name='tile')
 
             net_h3_concat = ConcatLayer([net_h3, net_reduced_text], concat_dim=3, name='d_h3_concat') # (64, 4, 4, 640)
             # net_h3_concat = net_h3 # no text info
@@ -460,9 +465,15 @@ def discriminator_txt2img_resnet(input_images, net_rnn_embed=None, is_train=True
             net_reduced_text = DenseLayer(net_rnn_embed, n_units=t_dim,         # 233, 234
                    act=lambda x: tl.act.lrelu(x, 0.2),
                    W_init=w_init, name='d_reduce_txt/dense')
-            net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 1) # 235
-            net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 2) # 236
-            net_reduced_text.outputs = tf.tile(net_reduced_text.outputs, [1, 4, 4, 1], name='d_tiled_embeddings')
+            ## no TL
+            # net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 1) # 235
+            # net_reduced_text.outputs = tf.expand_dims(net_reduced_text.outputs, 2) # 236
+            # net_reduced_text.outputs = tf.tile(net_reduced_text.outputs, [1, 4, 4, 1], name='d_tiled_embeddings')
+            ## TL
+            net_reduced_text = ExpandDimsLayer(net_reduced_text, axis=1, name='expand_dims1')
+            net_reduced_text = ExpandDimsLayer(net_reduced_text, axis=2, name='expand_dims2')
+            net_reduced_text = TileLayer(net_reduced_text, multiples=[1, 4, 4, 1], name='tile')
+
             net_h3_concat = ConcatLayer([net_h3, net_reduced_text], concat_dim=3, name='d_h3_concat') # 242  if t_dim = 256 : (64, 4, 4, 786); if t_dim = 128 :(64, 4, 4, 640)
             # 243 (ndf*8 + 128 or 256) x 4 x 4
             net_h3 = Conv2d(net_h3_concat, df_dim*8, (1, 1), (1, 1),            # 244 (64, 4, 4, df_dim*8)
