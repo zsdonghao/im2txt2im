@@ -1,7 +1,7 @@
 *.DS_Store
+*.pyc
 checkpoint/
 samples/
 model/
 _*
-*.pyc
 *.log
