@@ -4007,8 +4007,6 @@ class ExpandDimsLayer(Layer):
         The `Layer` class feeding into this layer.
     axis : int, 0-D (scalar).
         Specifies the dimension index at which to expand the shape of input.
-    dim : int, 0-D (scalar).
-        Equivalent to axis, to be deprecated.
     name : a string or None
         An optional name to attach to this layer.
     """
@@ -4016,7 +4014,6 @@ class ExpandDimsLayer(Layer):
         self,
         layer = None,
         axis = None,
-        dim = None,
         name = 'expand_dims',
     ):
         Layer.__init__(self, name=name)
@@ -4024,7 +4021,10 @@ class ExpandDimsLayer(Layer):
 
         print("  tensorlayer:Instantiate ExpandDimsLayer  %s" % self.name)
         with tf.variable_scope(name) as vs:
-            self.outputs = tf.expand_dims(self.inputs, axis=axis, dim=dim)
+            try:    # TF12
+                self.outputs = tf.expand_dims(self.inputs, axis=axis)
+            except: # TF11
+                self.outputs = tf.expand_dims(self.inputs, dim=axis)
         self.all_layers = list(layer.all_layers)
         self.all_params = list(layer.all_params)
         self.all_drop = dict(layer.all_drop)
