@@ -4026,7 +4026,7 @@ class ExpandDimsLayer(object):
         self.all_params = list(layer.all_params)
         self.all_drop = dict(layer.all_drop)
         self.all_layers.extend( [self.outputs] )
-        self.all_params.extend( variables )
+        # self.all_params.extend( variables )
 
 
 # Slicing and Joining
@@ -4063,7 +4063,7 @@ class ExpandDimsLayer(object):
         self.all_params = list(layer.all_params)
         self.all_drop = dict(layer.all_drop)
         self.all_layers.extend( [self.outputs] )
-        self.all_params.extend( variables )
+        # self.all_params.extend( variables )
 
 
 class TileLayer(object):
