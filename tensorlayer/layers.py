@@ -3996,7 +3996,7 @@ class ElementwiseLayer(Layer):
 
 
 # Slicing and Joining
-class ExpandDimsLayer(object):
+class ExpandDimsLayer(Layer):
     """
     The :class:`ExpandDimsLayer` class inserts a dimension of 1 into a tensor's shape,
     see `tf.expand_dims() <https://www.tensorflow.org/api_docs/python/array_ops/shapes_and_shaping#expand_dims>`_ .
@@ -4032,7 +4032,7 @@ class ExpandDimsLayer(object):
         # self.all_params.extend( variables )
 
 
-class TileLayer(object):
+class TileLayer(Layer):
     """
     The :class:`TileLayer` class constructs a tensor by tiling a given tensor,
     see `tf.tile() <https://www.tensorflow.org/api_docs/python/array_ops/slicing_and_joining#tile>`_ .
