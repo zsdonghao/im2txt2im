@@ -3994,40 +3994,6 @@ class ElementwiseLayer(Layer):
         self.all_drop = list_remove_repeat(self.all_drop)
 
 
-class ExpandDimsLayer(object):
-    """
-    The :class:`ExpandDimsLayer` class is `tf.expand_dims <https://www.tensorflow.org/api_docs/python/array_ops/shapes_and_shaping#expand_dims>`_ .
-
-    Parameters
-    ----------
-    layer : a :class:`Layer` instance
-        The `Layer` class feeding into this layer.
-    axis : int, 0-D (scalar).
-        Specifies the dimension index at which to expand the shape of input.
-    dim : int, 0-D (scalar).
-        Equivalent to axis, to be deprecated.
-    name : a string or None
-        An optional name to attach to this layer.
-    """
-    def __init__(
-        self,
-        layer = None,
-        axis = None,
-        dim = None,
-        name = 'lambda_layer',
-    ):
-        Layer.__init__(self, name=name)
-        self.inputs = layer.outputs
-
-        print("  tensorlayer:Instantiate ExpandDimsLayer  %s" % self.name)
-        with tf.variable_scope(name) as vs:
-            tf.expand_dims(self.inputs, axis=axis, dim=dim)
-        self.all_layers = list(layer.all_layers)
-        self.all_params = list(layer.all_params)
-        self.all_drop = dict(layer.all_drop)
-        self.all_layers.extend( [self.outputs] )
-        # self.all_params.extend( variables )
-
 
 # Slicing and Joining
 class ExpandDimsLayer(object):
