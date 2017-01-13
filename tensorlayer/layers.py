@@ -4021,7 +4021,7 @@ class ExpandDimsLayer(object):
 
         print("  tensorlayer:Instantiate ExpandDimsLayer  %s" % self.name)
         with tf.variable_scope(name) as vs:
-            tf.expand_dims(self.inputs., axis=axis, dim=dim)
+            tf.expand_dims(self.inputs, axis=axis, dim=dim)
         self.all_layers = list(layer.all_layers)
         self.all_params = list(layer.all_params)
         self.all_drop = dict(layer.all_drop)
