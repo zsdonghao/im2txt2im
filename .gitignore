@@ -2,5 +2,6 @@
 checkpoint/
 samples/
 _*
+_*py
 *.pyc
 *.log
