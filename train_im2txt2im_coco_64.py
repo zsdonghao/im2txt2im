@@ -761,7 +761,7 @@ def main(_):
             #     print("%d : %s" % (i, " ".join(sentence)))
 
             ## cleaning caption data
-            b_sentences_ids = precess_sequences(b_sentences_ids, end_id=vocab.end_id, pad_val=0, is_shorten=True, remain_end_id=True)
+            b_sentences_ids = process_sequences(b_sentences_ids, end_id=vocab.end_id, pad_val=0, is_shorten=True, remain_end_id=True)
 
             ## txt2im : Train GAN
             # read image    : b_images_txt2im
@@ -776,7 +776,7 @@ def main(_):
             ## you may want to view the image after data augmentation
             # for i, img in enumerate(b_images_txt2im):
             #     scipy.misc.imsave('image_txt2im_%d.png' % i, img)
-            # b_sentences_ids = precess_sequences(b_sentences_ids, end_id=vocab.end_id, pad_val=0, is_shorten=True)
+            # b_sentences_ids = process_sequences(b_sentences_ids, end_id=vocab.end_id, pad_val=0, is_shorten=True)
             # b_sentences_ids[0] = b_sentences_ids[0][2:]
             b_sentences_ids_w = b_sentences_ids[-1:]+b_sentences_ids[:-1]   # <-- the wrong captions are the real captions shift by 1
             # for i, sentence_id in enumerate(b_sentences_ids_w):
