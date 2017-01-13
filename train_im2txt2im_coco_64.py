@@ -687,7 +687,7 @@ def main(_):
 
         max_caption_length = 25
         n_step = 1000000
-        n_check_step = 500
+        n_check_step = 100
         total_d_loss, total_g_loss, total_e_loss = 0, 0, 0
         total_e_loss = 0
         total_d1, total_d2, total_d3 = 0, 0, 0
@@ -849,19 +849,20 @@ def main(_):
                 print("rnn", np.min(rnn_out), np.max(rnn_out))
                 save_images(img_gen, [8, int(batch_size/8)], '{}/train_{:02d}.png'.format(sample_dir, step))
                 ## Save model to npz
-                tl.files.save_npz(net_cnn.all_params, name=net_c_name, sess=sess)
-                tl.files.save_npz(net_rnn.all_params, name=net_e_name, sess=sess)
-                tl.files.save_npz(net_g.all_params, name=net_g_name, sess=sess)
-                tl.files.save_npz(net_d.all_params, name=net_d_name, sess=sess)
-                net_c_name_ = os.path.join(save_dir, 'net_c_%d.npz' % step)
-                net_e_name_ = os.path.join(save_dir, 'net_e_%d.npz' % step)
-                net_g_name_ = os.path.join(save_dir, 'net_g_%d.npz' % step)
-                net_d_name_ = os.path.join(save_dir, 'net_d_%d.npz' % step)
-                tl.files.save_npz(net_cnn.all_params, name=net_c_name_, sess=sess)
-                tl.files.save_npz(net_rnn.all_params, name=net_e_name_, sess=sess)
-                tl.files.save_npz(net_g.all_params, name=net_g_name_, sess=sess)
-                tl.files.save_npz(net_d.all_params, name=net_d_name_, sess=sess)
-                print("[*] Saving txt2im checkpoints SUCCESS!")
+                if step % (n_check_step*10) == 0:
+                    tl.files.save_npz(net_cnn.all_params, name=net_c_name, sess=sess)
+                    tl.files.save_npz(net_rnn.all_params, name=net_e_name, sess=sess)
+                    tl.files.save_npz(net_g.all_params, name=net_g_name, sess=sess)
+                    tl.files.save_npz(net_d.all_params, name=net_d_name, sess=sess)
+                    net_c_name_ = os.path.join(save_dir, 'net_c_%d.npz' % step)
+                    net_e_name_ = os.path.join(save_dir, 'net_e_%d.npz' % step)
+                    net_g_name_ = os.path.join(save_dir, 'net_g_%d.npz' % step)
+                    net_d_name_ = os.path.join(save_dir, 'net_d_%d.npz' % step)
+                    tl.files.save_npz(net_cnn.all_params, name=net_c_name_, sess=sess)
+                    tl.files.save_npz(net_rnn.all_params, name=net_e_name_, sess=sess)
+                    tl.files.save_npz(net_g.all_params, name=net_g_name_, sess=sess)
+                    tl.files.save_npz(net_d.all_params, name=net_d_name_, sess=sess)
+                    print("[*] Saving txt2im checkpoints SUCCESS!")
 
 
 if __name__ == "__main__":
