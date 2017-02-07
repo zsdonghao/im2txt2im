@@ -25,7 +25,7 @@ import tensorlayer as tl
 from tensorlayer.prepro import *
 from tensorlayer.layers import *
 import nltk
-from model_im2txt import * #<--- Modify from Image-Captioning repo
+from model_im2txt import *
 from utils import *
 
 ## Config your image directory here
@@ -639,54 +639,15 @@ def main(_):
     sample_size = batch_size
     sample_seed = np.random.normal(loc=0.0, scale=1.0, size=(sample_size, z_dim)).astype(np.float32)
         # sample_seed = np.random.uniform(low=-1, high=1, size=(sample_size, z_dim)).astype(np.float32)
-    sample_sentence = ["A yellow school bus parked in a parking lot"]* int(sample_size)
-                        # "a soccer playing getting ready to kick a ball during a game"] * int(sample_size/2)
-    # sample_sentence = ["A bowl of bananas is desert is on the table."] * int(sample_size/8) + \
-    #                   ["The decadent chocolate desert is on the table."] * int(sample_size/8) + \
-    #                   ["a close up of a person eating a hot dog"] * int(sample_size/8) + \
-    #                   ["a man standing next to an airplane on a runway"] * int(sample_size/8) + \
-    #                   ["a large blue octopus kite flies above the people having fun at the beach"] * int(sample_size/8) + \
-    #                   ["a table with many plates of food and drinks"] * int(sample_size/8) + \
-    #                   ["a picture of a very clean living room"] * int(sample_size/8) + \
-    #                   ["two plates of food that include beans, guacamole and rice"] * int(sample_size/8)
-    '''
-    sample_sentence = ["a person is snow skiing down a hill"] * int(sample_size/8) + \
-                      ["a person on a surfboard rides on the waves"] * int(sample_size/8) + \
-                      ["a man returns the tennis ball with his racket"] * int(sample_size/8) + \
-                      ["a group of men playing a game of soccer"] * int(sample_size/8) + \
-                      ["a person riding a snowboard down a ramp"] * int(sample_size/8) + \
-                      ["a person lying on a bed in a bedroom"] * int(sample_size/8) + \
-                      ["a person on a motorcycle is driving away"] * int(sample_size/8) + \
-                      ["a person is riding a bicycle on a road"] * int(sample_size/8)
-
-    sample_sentence = ["the person is skiing down the mountainside."] * int(sample_size/8) + \
-                      ["a man on a surfboard rides on the waves."] * int(sample_size/8) + \
-                      ["a man returns the tennis ball with his racket."] * int(sample_size/8) + \
-                      ["a group of men playing a game of soccer."] * int(sample_size/8) + \
-                      ["a group of people in a kitchen preparing a meal"] * int(sample_size/8) + \
-                      ["a girl watching a dog eat a cake on a table."] * int(sample_size/8) + \
-                      ["a man skateboarder in a white shirt doing a trick."] * int(sample_size/8) + \
-                      ["a woman riding a bicycle down a sideway."] * int(sample_size/8)
-
-    sample_sentence = ["a person walking across a beach next to the ocean."] * int(sample_size/8) + \
+    sample_sentence = ["a yellow school bus parked in a parking lot."] * int(sample_size/8) + \
                       ["a man swinging a baseball bat over home plate."] * int(sample_size/8) + \
-                      ["a close up of a person eating a hot dog."] * int(sample_size/8) + \
-                      ["two giraffes that are standing together in a field."] * int(sample_size/8) + \
-                      ["a large passenger plane on a runway prepares to taxi"] * int(sample_size/8) + \
+                      ["a pitcher is about to throw the ball to the batter."] * int(sample_size/8) + \
                       ["a toilet in a small room with a window and unfinished walls."] * int(sample_size/8) + \
+                      ["a man in a wet suit riding a surfboard on a wave"] * int(sample_size/8) + \
                       ["a group of people on skis stand on the snow."] * int(sample_size/8) + \
-                      ["a man in a wet suit riding a surfboard on a wave."] * int(sample_size/8)
-    '''
+                      ["a person is snow skiing down a hill."] * int(sample_size/8) + \
+                      ["a man returns the tennis ball with his racket."] * int(sample_size/8)
 
-    # sample_sentence = ["a green school bus parked in a parking lot."] * int(sample_size/8) + \
-    #                   ["a elephant in the sky."] * int(sample_size/8) + \
-    #                   ["a people."] * int(sample_size/8) + \
-    #                   ["two cars."] * int(sample_size/8) + \
-    #                   ["a black toilet in a small black room with a window and unfinished black walls."] * int(sample_size/8) + \
-    #                   ["a red toilet in a small red room with a window and unfinished red walls."] * int(sample_size/8) + \
-    #                   ["a green toilet in a small green room with a window and unfinished green walls."] * int(sample_size/8) + \
-    #                   ["a yellow toilet in a small yellow room with a window and unfinished yellow walls."] * int(sample_size/8)
-    # sample_sentence = captions_ids_test[0:sample_size]
     for i, sentence in enumerate(sample_sentence):
         sample_sentence[i] = [vocab.word_to_id(word) for word in nltk.tokenize.word_tokenize(sentence)] + [vocab.end_id] # <- end_id
         print("seed: %s" % sentence)

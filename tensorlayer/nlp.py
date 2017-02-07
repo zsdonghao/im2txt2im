@@ -138,7 +138,6 @@ def sample(a=[], temperature=1.0):
         # print(b)
         return np.argmax(np.random.multinomial(1, b, 1))
 
-# import heapq
 def sample_top(a=[], top_k=10):
     """Sample from ``top_k`` probabilities.
 
@@ -165,6 +164,7 @@ def sample_top(a=[], top_k=10):
     # # probs = probs / np.sum(probs)
     # # choice = np.random.choice(idx, p=probs)
     # # return choice
+
 
 ## Vector representations of words (Advanced)  UNDOCUMENT
 class SimpleVocabulary(object):
@@ -324,11 +324,11 @@ def create_vocab(sentences, word_counts_output_file, min_word_count=1):
 
     Returns
     --------
-    tl.nlp.SimpleVocabulary object.
+    - tl.nlp.SimpleVocabulary object.
 
     Mores
     -----
-    tl.nlp.build_vocab()
+    - ``tl.nlp.build_vocab()``
 
     Examples
     --------
@@ -360,6 +360,7 @@ def create_vocab(sentences, word_counts_output_file, min_word_count=1):
     # Filter uncommon words and sort by descending count.
     word_counts = [x for x in counter.items() if x[1] >= min_word_count]
     word_counts.sort(key=lambda x: x[1], reverse=True)
+    word_counts = [("<PAD>", 0)] + word_counts # 1st id should be reserved for padding
     # print(word_counts)
     print("    Words in vocabulary: %d" % len(word_counts))
 
@@ -395,8 +396,7 @@ def simple_read_words(filename="nietzsche.txt"):
         return words
 
 def read_words(filename="nietzsche.txt", replace = ['\n', '<eos>']):
-    """File to list format context.
-    Note that, this script can not handle punctuations.
+    """File to list format context. Note that, this script can not handle punctuations.
     For customized read_words method, see ``tutorial_generate_text.py``.
 
     Parameters
@@ -408,15 +408,21 @@ def read_words(filename="nietzsche.txt", replace = ['\n', '<eos>']):
 
     Returns
     --------
-    The context in a list, split by ' ' by default, and use '<eos>' to represent '\n'.
-    e.g. [... 'how', 'useful', 'it', "'s" ... ]
+    The context in a list, split by space by default, and use ``'<eos>'`` to represent ``'\n'``,
+    e.g. ``[... 'how', 'useful', 'it', "'s" ... ]``.
 
     Code References
     ---------------
     - `tensorflow.models.rnn.ptb.reader <https://github.com/tensorflow/tensorflow/tree/master/tensorflow/models/rnn/ptb>`_
     """
     with tf.gfile.GFile(filename, "r") as f:
-        return f.read().replace(*replace).split()
+        try:    # python 3.4 or older
+            context_list = f.read().replace(*replace).split()
+        except: # python 3.5
+            f.seek(0)
+            replace = [x.encode('utf-8') for x in replace]
+            context_list = f.read().replace(*replace).split()
+        return context_list
 
 def read_analogies_file(eval_file='questions-words.txt', word2id={}):
     """Reads through an analogy question file, return its id format.
@@ -564,7 +570,6 @@ def build_words_dataset(words=[], vocabulary_size=50000, printable=True, unk_key
         word_to_id, mapping words to unique IDs.
     reverse_dictionary : a dictionary
         id_to_word, mapping id to unique word.
-
 
     Examples
     --------
@@ -746,6 +751,7 @@ def basic_tokenizer(sentence, _WORD_SPLIT=re.compile(b"([.,!?\"':;)(])")):
   - Code from ``/tensorflow/models/rnn/translation/data_utils.py``
   """
   words = []
+  sentence = tf.compat.as_bytes(sentence)
   for space_separated_fragment in sentence.strip().split():
     words.extend(re.split(_WORD_SPLIT, space_separated_fragment))
   return [w for w in words if w]
@@ -842,7 +848,7 @@ def initialize_vocabulary(vocabulary_path):
     rev_vocab = []
     with gfile.GFile(vocabulary_path, mode="rb") as f:
       rev_vocab.extend(f.readlines())
-    rev_vocab = [line.strip() for line in rev_vocab]
+    rev_vocab = [tf.compat.as_bytes(line.strip()) for line in rev_vocab]
     vocab = dict([(x, y) for (y, x) in enumerate(rev_vocab)])
     return vocab, rev_vocab
   else:
