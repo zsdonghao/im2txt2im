@@ -23,9 +23,9 @@ This code run well under python2.7 and TensorFlow 0.11, if you use higher versio
 `VOCAB_FILE = DIR + "/data/mscoco/word_counts.txt"`
 
 ### 4. Train text-to-image synthesis with image captioning
-* `model_im2txt.py` model for training image captioning
-* `train_im2txt2im_coco_64.py` for training I2T2I
-* `utils.py` for utility functions
+* `model_im2txt.py` model for image captioning
+* `train_im2txt2im_coco_64.py` script for training I2T2I
+* `utils.py` script for utility functions
 
 ## Results
 
