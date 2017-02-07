@@ -1,4 +1,4 @@
-### Image Captioning and Text-to-Image Synthesis with textual data augmentation
+# Image Captioning and Text-to-Image Synthesis with textual data augmentation
 
 This code run well under python2.7 and TensorFlow 0.11, if you use higher version of TensorFlow you may need to update the `tensorlayer` folder from [TensorLayer Lib](https://github.com/zsdonghao/tensorlayer).
 
