@@ -4,9 +4,6 @@ import random
 import scipy
 import numpy as np
 
-""" The functions here will be merged into TensorLayer after finishing this project.
-"""
-
 #files
 def load_folder_list(path=""):
     """Return a folder list in a folder by given a folder path.
