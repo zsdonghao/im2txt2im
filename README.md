@@ -26,7 +26,7 @@ This code run well under python2.7 and TensorFlow 0.11, if you use higher versio
 * `model_im2txt.py` model for image captioning
 * `train_im2txt2im_coco_64.py` script for training I2T2I
 * `utils.py` script for utility functions
-
+ 
 ## Results
 
 ### 1. Here are some results on MSCOCO
