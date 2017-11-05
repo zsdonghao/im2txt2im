@@ -52,7 +52,7 @@ This code run well under python2.7 and TensorFlow 0.11, if you use higher versio
 @article{hao2017im2txt2im,
   title={I2T2I: LEARNING TEXT TO IMAGE SYNTHESIS WITH TEXTUAL DATA AUGMENTATION},
   author={Hao Dong, Jingqing Zhang, Douglas McIlwraith, Yike Guo},
-  journal={arXiv preprint arXiv},
+  journal={ICIP},
   year={2017}
 }
 ```
