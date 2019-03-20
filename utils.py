@@ -66,7 +66,9 @@ def cosine_similarity(v1, v2):
     ________
     a tensor of [batch_size, ]
     """
-    return tf.reduce_sum(tf.mul(v1, v2), reduction_indices=1) / (tf.sqrt(tf.reduce_sum(tf.mul(v1, v1), reduction_indices=1)) * tf.sqrt(tf.reduce_sum(tf.mul(v2, v2), reduction_indices=1)))
+    # return tf.reduce_sum(tf.mul(v1, v2), reduction_indices=1) / (tf.sqrt(tf.reduce_sum(tf.mul(v1, v1), reduction_indices=1)) * tf.sqrt(tf.reduce_sum(tf.mul(v2, v2), reduction_indices=1))) # TF0.11
+    return tf.reduce_sum(tf.multiply(v1, v2), reduction_indices=1) / (tf.sqrt(tf.reduce_sum(tf.multiply(v1, v1), reduction_indices=1)) * tf.sqrt(tf.reduce_sum(tf.multiply(v2, v2), reduction_indices=1))) # TF1.0.0
+
 
 
 

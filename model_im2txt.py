@@ -589,7 +589,8 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
             print(net_image_embeddings.outputs)
             # exit()
             net_img_rnn = tl.layers.DynamicRNNLayer(net_image_embeddings,
-                                      cell_fn = tf.nn.rnn_cell.BasicLSTMCell,
+                                      # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
+                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
                                       n_hidden = num_lstm_units,
                                       dropout = None,
                                       initial_state = None,
@@ -605,11 +606,14 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
             state_feed = tf.placeholder(dtype=tf.float32,
                                         shape=[None, sum(net_img_rnn.cell.state_size)],
                                         name="state_feed")
-            state_tuple = tf.split(1, 2, state_feed)
-            state_tuple = tf.nn.rnn_cell.LSTMStateTuple(state_tuple[0], state_tuple[1])
+            # state_tuple = tf.split(1, 2, state_feed) # TF0.11
+            state_tuple = tf.split(state_feed, 2, 1) # TF1.0.0
+            # state_tuple = tf.nn.rnn_cell.LSTMStateTuple(state_tuple[0], state_tuple[1]) # TF0.11
+            state_tuple = tf.contrib.rnn.LSTMStateTuple(state_tuple[0], state_tuple[1]) # TF1.0.0
 
             net_seq_rnn = tl.layers.DynamicRNNLayer(net_seq_embeddings,
-                          cell_fn = tf.nn.rnn_cell.BasicLSTMCell,
+                          # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
+                          cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
                           n_hidden = num_lstm_units,
                           dropout = None,
                           initial_state = state_tuple,  # different with training
@@ -628,7 +632,8 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
                 dropout = None
             net_image_embeddings = tl.layers.ReshapeLayer(net_image_embeddings, shape=(batch_size, 1, embedding_size))
             net_img_rnn = tl.layers.DynamicRNNLayer(net_image_embeddings,
-                                      cell_fn = tf.nn.rnn_cell.BasicLSTMCell,
+                                      # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
+                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
                                       n_hidden = num_lstm_units,
                                       initializer = initializer,
                                       dropout = dropout,
@@ -641,7 +646,8 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
             lstm_scope.reuse_variables()
             tl.layers.set_name_reuse(True)
             network = tl.layers.DynamicRNNLayer(net_seq_embeddings,
-                                      cell_fn = tf.nn.rnn_cell.BasicLSTMCell,
+                                      # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
+                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
                                       n_hidden = num_lstm_units,
                                       initializer = initializer,
                                       dropout = dropout,
