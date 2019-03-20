@@ -353,6 +353,8 @@ def prefetch_input_data(reader,
 
 
 
+
+
 def inception_v3(images,
                  trainable=True,
                  is_training=True,
@@ -441,6 +443,7 @@ def inception_v3(images,
 
   # return net              # Original
   return net, end_points    # Hao Dong
+
 
 
 def Build_Inputs(mode, input_file_pattern):
@@ -536,7 +539,7 @@ def Build_Image_Embeddings(mode, images, train_inception):
                                                  'trainable' : train_inception,
                                                  'is_training' : mode == 'train',
                                                 },
-                                            name='InceptionV3',
+                                            name='',
                                             )
     network = tl.layers.DenseLayer(network,
                                     n_units = embedding_size,
@@ -585,12 +588,10 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
     if mode == 'inference':
         with tf.variable_scope("lstm", initializer=initializer) as lstm_scope:
             tl.layers.set_name_reuse(True)
-            net_image_embeddings = tl.layers.ReshapeLayer(net_image_embeddings, shape=(-1, 1, embedding_size))
-            print(net_image_embeddings.outputs)
-            # exit()
+            net_image_embeddings = tl.layers.ReshapeLayer(net_image_embeddings, shape=(batch_size, 1, embedding_size))
             net_img_rnn = tl.layers.DynamicRNNLayer(net_image_embeddings,
                                       # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
-                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
+                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.0.0
                                       n_hidden = num_lstm_units,
                                       dropout = None,
                                       initial_state = None,
@@ -599,7 +600,6 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
                                       name = 'embed',
                                       )
             lstm_scope.reuse_variables()
-            # exit()
 
             # # In inference mode, use concatenated states for convenient feeding and fetching.
             # Placeholder for feeding a batch of concatenated states.
@@ -607,13 +607,13 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
                                         shape=[None, sum(net_img_rnn.cell.state_size)],
                                         name="state_feed")
             # state_tuple = tf.split(1, 2, state_feed) # TF0.11
-            state_tuple = tf.split(state_feed, 2, 1) # TF1.0.0
+            state_tuple = tf.split(state_feed, 2, 1)  # TF1.0.0
             # state_tuple = tf.nn.rnn_cell.LSTMStateTuple(state_tuple[0], state_tuple[1]) # TF0.11
             state_tuple = tf.contrib.rnn.LSTMStateTuple(state_tuple[0], state_tuple[1]) # TF1.0.0
 
             net_seq_rnn = tl.layers.DynamicRNNLayer(net_seq_embeddings,
                           # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
-                          cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
+                          cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.0.0
                           n_hidden = num_lstm_units,
                           dropout = None,
                           initial_state = state_tuple,  # different with training
@@ -633,12 +633,12 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
             net_image_embeddings = tl.layers.ReshapeLayer(net_image_embeddings, shape=(batch_size, 1, embedding_size))
             net_img_rnn = tl.layers.DynamicRNNLayer(net_image_embeddings,
                                       # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
-                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
+                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.0.0
                                       n_hidden = num_lstm_units,
                                       initializer = initializer,
                                       dropout = dropout,
                                       initial_state = None,
-                                      sequence_length = tf.ones([1]),
+                                      sequence_length = tf.ones([batch_size]),
                                       return_seq_2d = True,   # stack denselayer after it
                                       name = 'embed',
                                       )
@@ -647,7 +647,7 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
             tl.layers.set_name_reuse(True)
             network = tl.layers.DynamicRNNLayer(net_seq_embeddings,
                                       # cell_fn = tf.nn.rnn_cell.BasicLSTMCell, # TF0.11
-                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.00
+                                      cell_fn = tf.contrib.rnn.BasicLSTMCell, # TF1.0.0
                                       n_hidden = num_lstm_units,
                                       initializer = initializer,
                                       dropout = dropout,
@@ -675,10 +675,13 @@ def Build_Model(mode, net_image_embeddings, net_seq_embeddings, target_seqs, inp
       total_loss = tf.contrib.losses.get_total_loss()
 
       # Add summaries.
-      tf.scalar_summary("batch_loss", batch_loss)
-      tf.scalar_summary("total_loss", total_loss)
+      # tf.scalar_summary("batch_loss", batch_loss) # TF0.11
+      # tf.scalar_summary("total_loss", total_loss)
+      tf.summary.scalar('batch_loss', batch_loss)  # TF1.0.0
+      tf.summary.scalar('total_loss', total_loss)
       for var in tf.trainable_variables():
-        tf.histogram_summary(var.op.name, var)
+        # tf.histogram_summary(var.op.name, var) # TF0.11
+        tf.summary.histogram(var.op.name, var) # TF1.0.0
 
       total_loss = total_loss
       target_cross_entropy_losses = losses  # Used in evaluation.
