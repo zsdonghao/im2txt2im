@@ -53,6 +53,7 @@ lstm_dropout_keep_prob = 0.7
 initializer = tf.random_uniform_initializer(minval=-initializer_scale, maxval=initializer_scale)
 
 
+
 def distort_image(image, thread_id):
   """Perform random distortions on an image.
   Args:
@@ -85,7 +86,7 @@ def distort_image(image, thread_id):
 
     # The random_* ops do not necessarily clamp.
     image = tf.clip_by_value(image, 0.0, 1.0)
-    print("distort_image : Random Brightness, saturation, contrast, hue, flip")
+
   return image
 
 def process_image(mode, encoded_image, thread_id=0):
@@ -104,8 +105,8 @@ def process_image(mode, encoded_image, thread_id=0):
                       is_training,
                       height,
                       width,
-                      resize_height=resize_height,
-                      resize_width=resize_width,
+                      resize_height=346,
+                      resize_width=346,
                       thread_id=0,
                       image_format="jpeg"):
       """Decode an image, resize and apply random distortions.
@@ -129,7 +130,8 @@ def process_image(mode, encoded_image, thread_id=0):
       # only logged in thread 0.
       def image_summary(name, image):
         if not thread_id:
-          tf.image_summary(name, tf.expand_dims(image, 0))
+          # tf.image_summary(name, tf.expand_dims(image, 0)) # TF0.11
+          tf.summary.image(name, tf.expand_dims(image, 0)) # TF1.0.0
 
       # Decode image into a float32 Tensor of shape [?, ?, 3] with values in [0, 1).
       with tf.name_scope("decode"):#, values=[encoded_image]):   # DH modify
@@ -145,7 +147,7 @@ def process_image(mode, encoded_image, thread_id=0):
 
       # Resize image.
       assert (resize_height > 0) == (resize_width > 0)
-      if resize_height: # random size to 346x346
+      if resize_height:
         try:
             image = tf.image.resize_images(image,
                                            size=[resize_height, resize_width],
@@ -157,7 +159,7 @@ def process_image(mode, encoded_image, thread_id=0):
                                            method=tf.image.ResizeMethod.BILINEAR)
 
       # Crop to final dimensions.
-      if is_training:   # 346x346 -> 299x299
+      if is_training:
         image = tf.random_crop(image, [height, width, 3])
       else:
         # Central crop, assuming resize_height > height, resize_width > width.
@@ -167,15 +169,15 @@ def process_image(mode, encoded_image, thread_id=0):
 
       # Randomly distort the image.
       if is_training:
-        # image = distort_image(image, thread_id)       # < Hao, remove for txt2im
-        image = tf.image.random_flip_left_right(image)  # < Hao, add for txt2im
-        print("DEBUG: random flip and crop only for txt2im, disable random brightness, saturation, saturation and contrast by zsdonghao")# < Hao, add for txt2im
+        image = distort_image(image, thread_id)
 
       image_summary("final_image", image)
 
       # Rescale to [-1,1] instead of [0, 1]
-      image = tf.sub(image, 0.5)
-      image = tf.mul(image, 2.0)
+      # image = tf.sub(image, 0.5) # TF0.11
+      # image = tf.mul(image, 2.0)
+      image = tf.subtract(image, 0.5)    # TF1.0.0
+      image = tf.multiply(image, 2.0)
       return image
     return _process_image(encoded_image,
                           is_training= mode == 'train', # If Traning, distort image; if None, crop central part; the size unchange.
@@ -254,7 +256,8 @@ def batch_with_dynamic_pad(images_and_captions,
   enqueue_list = []
   for image, caption in images_and_captions:
     caption_length = tf.shape(caption)[0]
-    input_length = tf.expand_dims(tf.sub(caption_length, 1), 0)
+    # input_length = tf.expand_dims(tf.sub(caption_length, 1), 0) # TF0.11
+    input_length = tf.expand_dims(tf.subtract(caption_length, 1), 0)   # TF1.0.0
 
     input_seq = tf.slice(caption, [0], input_length)
     target_seq = tf.slice(caption, [1], input_length)
@@ -270,9 +273,12 @@ def batch_with_dynamic_pad(images_and_captions,
 
   if add_summaries:
     lengths = tf.add(tf.reduce_sum(mask, 1), 1)
-    tf.scalar_summary("caption_length/batch_min", tf.reduce_min(lengths))
-    tf.scalar_summary("caption_length/batch_max", tf.reduce_max(lengths))
-    tf.scalar_summary("caption_length/batch_mean", tf.reduce_mean(lengths))
+    # tf.scalar_summary("caption_length/batch_min", tf.reduce_min(lengths)) # TF0.11
+    # tf.scalar_summary("caption_length/batch_max", tf.reduce_max(lengths))
+    # tf.scalar_summary("caption_length/batch_mean", tf.reduce_mean(lengths))
+    tf.summary.scalar("caption_length/batch_min", tf.reduce_min(lengths)) # TF1.0.0
+    tf.summary.scalar("caption_length/batch_max", tf.reduce_max(lengths))
+    tf.summary.scalar("caption_length/batch_mean", tf.reduce_mean(lengths))
 
   return images, input_seqs, target_seqs, mask
 
@@ -345,12 +351,11 @@ def prefetch_input_data(reader,
     enqueue_ops.append(values_queue.enqueue([value]))
   tf.train.queue_runner.add_queue_runner(tf.train.queue_runner.QueueRunner(
       values_queue, enqueue_ops))
-  tf.scalar_summary(
+  # tf.scalar_summary(# TF0.11
+  tf.summary.scalar(  # TF1.0.0
       "queue/%s/fraction_of_%d_full" % (values_queue.name, capacity),
       tf.cast(values_queue.size(), tf.float32) * (1. / capacity))
-
   return values_queue
-
 
 
 

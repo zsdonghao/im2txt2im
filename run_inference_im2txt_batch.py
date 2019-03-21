@@ -77,7 +77,7 @@ def main(_):
     mode = 'inference'
     max_caption_length = 20
     top_k = 3
-    n_captions = 1
+    # n_captions = 1
     print("n_images_train: %d" % n_images_train)
 
     # Build the inference graph.

@@ -8,7 +8,7 @@ from __future__ import print_function
 
 import math
 import os
-import numpy as np 
+import numpy as np
 import scipy
 import time
 from PIL import Image
@@ -34,6 +34,7 @@ VOCAB_FILE = DIR + "data/mscoco/word_counts.txt"
 # images_train_dir = '/home/haodong/Workspace/image_captioning/data/mscoco/raw-data/train2014/'
 # images_train_dir = '/home/haodong/Workspace/MHP/data/images/'
 images_train_dir = DIR + "data/mscoco/raw-data/train2014/"
+images_train_dir = 'data/mpii/images/' # for MPII
 
 # preprog_img error counter
 prepro_img_failed_counter = 0
@@ -44,7 +45,8 @@ images_train_list = [images_train_dir + s for s in images_train_list]
 images_train_list = np.asarray(images_train_list)
 n_images_train = len(images_train_list)
 
-save_dir = "checkpoint" # <-- store the GAN model
+save_dir = "checkpoint"# <-- store the GAN model
+save_dir = "checkpoint_mpii" # for MPII
 if not os.path.exists(save_dir):
     print("[!] Folder %s is not exist, create it." % save_dir)
     os.mkdir(save_dir)
@@ -498,13 +500,14 @@ def discriminator_txt2img_resnet(input_images, net_rnn_embed=None, is_train=True
 
 
 def main(_):
+
     # Model checkpoint file or directory containing a model checkpoint file.
     checkpoint_path = CHECKPOINT_DIR
     # Text file containing the vocabulary.
     vocab_file = VOCAB_FILE
     # File pattern or comma-separated list of file patterns of image files.
     mode = 'inference'  # mode of im2txt module, generating image captions
-    top_k = 2
+    top_k = 3
     print("n_images_train: %d" % n_images_train)
 
     # g = tf.Graph()
@@ -635,16 +638,25 @@ def main(_):
 
     ## Seed
     sample_size = batch_size
-    sample_seed = np.random.normal(loc=0.0, scale=1.0, size=(sample_size, z_dim)).astype(np.float32)
+    # sample_seed = np.random.normal(loc=0.0, scale=1.0, size=(sample_size, z_dim)).astype(np.float32)
         # sample_seed = np.random.uniform(low=-1, high=1, size=(sample_size, z_dim)).astype(np.float32)
-    sample_sentence = ["a yellow school bus parked in a parking lot."] * int(sample_size/8) + \
-                      ["a man swinging a baseball bat over home plate."] * int(sample_size/8) + \
-                      ["a pitcher is about to throw the ball to the batter."] * int(sample_size/8) + \
-                      ["a toilet in a small room with a window and unfinished walls."] * int(sample_size/8) + \
-                      ["a man in a wet suit riding a surfboard on a wave"] * int(sample_size/8) + \
-                      ["a group of people on skis stand on the snow."] * int(sample_size/8) + \
-                      ["a person is snow skiing down a hill."] * int(sample_size/8) + \
-                      ["a man returns the tennis ball with his racket."] * int(sample_size/8)
+    # sample_sentence = ["a yellow school bus parked in a parking lot."] * int(sample_size/8) + \
+    #                   ["a man swinging a baseball bat over home plate."] * int(sample_size/8) + \
+    #                   ["a pitcher is about to throw the ball to the batter."] * int(sample_size/8) + \
+    #                   ["a toilet in a small room with a window and unfinished walls."] * int(sample_size/8) + \
+    #                   ["a man in a wet suit riding a surfboard on a wave"] * int(sample_size/8) + \
+    #                   ["a group of people on skis stand on the snow."] * int(sample_size/8) + \
+    #                   ["a person is snow skiing down a hill."] * int(sample_size/8) + \
+    #                   ["a man returns the tennis ball with his racket."] * int(sample_size/8)
+
+    sample_sentence = ["a person walking across a beach next to the ocean."] * int(sample_size/8) + \
+                      ["a tv remote control sits on a table."] * int(sample_size/8) + \
+                      ["a sandwich on a plate cutin half next to pasta."] * int(sample_size/8) + \
+                      ["there is a stop sign at the end of this cross walk"] * int(sample_size/8) + \
+                      ["a man leaping off the side of a cliff while skiing."] * int(sample_size/8) + \
+                      ["there is only one horse in the grassy field."] * int(sample_size/8) + \
+                      ["a sheep standing in a open grass field."] * int(sample_size/8) + \
+                      ["a green plant that is growing out of the ground."] * int(sample_size/8)
 
     for i, sentence in enumerate(sample_sentence):
         sample_sentence[i] = [vocab.word_to_id(word) for word in nltk.tokenize.word_tokenize(sentence)] + [vocab.end_id] # <- end_id
@@ -686,7 +698,7 @@ def main(_):
 
         max_caption_length = 25
         n_step = 1000000
-        n_check_step = 1#100
+        n_check_step = 100
         total_d_loss, total_g_loss, total_e_loss = 0, 0, 0
         total_e_loss = 0
         total_d1, total_d2, total_d3 = 0, 0, 0
@@ -843,6 +855,7 @@ def main(_):
                     total_d_loss, total_g_loss, total_e_loss = 0, 0, 0
                     total_d1, total_d2, total_d3 = 0, 0, 0
                     ## Generate a batch of image by given seeds
+                    sample_seed = np.random.normal(loc=0.0, scale=1.0, size=(sample_size, z_dim)).astype(np.float32) # change everytime
                     img_gen, rnn_out = sess.run([net_g.outputs, net_rnn2.outputs],
                                                 feed_dict={
                                                 t_real_caption : sample_sentence,
